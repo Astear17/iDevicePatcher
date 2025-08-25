@@ -1,4 +1,8 @@
 Cách hoạt đông của file này là chỉ để lấy link dán vào TrollStore.
+
+Locket Gold V5, cre Night Market Server
+**https://github.com/NightmarketServer/Locket/raw/refs/heads/main/Locket-V5.module**
+
 AppStore++_TrollStore_v1.0.3-2.ipa:
 **https://github.com/Astear17/iDevicePatcher/releases/download/1.0/AppStore++_TrollStore_v1.0.3-2.ipa**
 
