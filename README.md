@@ -1,9 +1,10 @@
 # iDevicePatcher
-TIPA Pack - nơi tôi tổng hợp IPA đã up trên TikTok: @hyper_astear.17 để ae có thể lấy link rồi paste thẳng vào TrollStore để tải. Không cần phải vào link drive chi cho lằng nhằng
+Chào mừng anh em đến với iDevicePatcher - nơi tôi tổng hợp IPA đã up trên TikTok: @hyper_astear.17 để ae có thể lấy link rồi paste thẳng vào TrollStore để tải. Không cần phải vào link drive chi cho lằng nhằng
+> Đây đéo phải là repository để patch hay là phần mềm gì hết, chả qua là tôi để cái tên iDevicePatcher cho vui thôi :P
 
 -----------------------
 # How To Use
-Sẽ có 2 cách để tải xuông & cài đặt TIPA/IPA cho TrollStore, bao gồm import thẳng link và tải thủ công
+Sẽ có 3 cách để tải xuông & cài đặt TIPA/IPA cho TrollStore, bao gồm import thẳng link, tải thủ công và cài bằng máy tính thông qua Sideloadly
 - Cách 1: Direct Install từ link (Install from URL)
   * Bước 1: Qua phần **[Releases](https://github.com/Astear17/iDevicePatcher/releases/tag/1.0)**, copy link GitHub của file (hoặc vào **[sourcelink.md](https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md)** để copy link)
   * Bước 2: Vào TrollStore, nhấp vào dấu + ở góc trái màn hình rồi chọn `Install from URL`
@@ -13,6 +14,9 @@ Sẽ có 2 cách để tải xuông & cài đặt TIPA/IPA cho TrollStore, bao g
   * Bước 1: Qua phần **[Releases](https://github.com/Astear17/iDevicePatcher/releases/tag/1.0)**, nhấp vào tên của file IPA muốn tải. Nó sẽ tự đông tải file về (hoặc vào **[sourcelink.md](https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md)** rồi nhấp vào link ở phía dưới tên IPA muốn tải)
   * Bước 2: Vào TrollStore, nhấp vào dấu + ở góc trái màn hình rồi chọn `Install IPA File`
   * Bước 3: Chọn file IPA vừa tải rồi bấm `Install` là xong
+- Cách 3: Tải IPA, install IPA File với máy tính bằng Sideloadly
+  * Bước 1: Qua phần **[Releases](https://github.com/Astear17/iDevicePatcher/releases/tag/1.0)**, nhấp vào tên của file IPA muốn tải. Nó sẽ tự đông tải file về (hoặc vào **[sourcelink.md](https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md)** rồi nhấp vào link ở phía dưới tên IPA muốn tải)
+  * Bước 2: `Để chiều rồi t hẫng viết, lười quá`
 -----------------------
 **Notes:**
 - Trong này đa số là ***TIPA*** hoặc ***IPA DÀNH CHO TROLLSTORE*** nên là ae lưu ý khi cài nhé, kẻo tải trúng bản TrollStore xong cài bằng chứng chỉ xong lại nói tôi nữa thì cũng chịu =)))
