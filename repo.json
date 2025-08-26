@@ -1,0 +1,36 @@
+{
+"name": 
+"Locket",
+"bundleIdentifier": 
+"com.81xg678xj5.71oshf4bxu",
+"marketplaceID": 
+"",
+"developerName": 
+"Example Developer",
+"subtitle": 
+"An awesome app.",
+"localizedDescription": 
+"This is an awesome app only available on AltStore.",
+"iconURL": 
+"https://i.imgur.com/cy22whi.jpeg",
+"tintColor": 
+"#e25856",
+"category": 
+"other",
+"screenshots": 
+[
+],
+"versions": 
+[
+],
+"appPermissions": 
+{
+"entitlements": 
+[...],
+"privacy": 
+{...}
+},
+"patreon": 
+{
+}
+}
