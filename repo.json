@@ -1,24 +1,73 @@
 {
-"name": 
-"iDevPatcher",
-"subtitle": 
-"Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
-"description": 
-"Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the links provided here to directly install these files using TrollStore without needing to mess with Drive links.",
-"iconURL": 
-"https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
-"website": 
-"https://astear17.github.io/iDevicePatcher",
-"patreonURL": 
-"https://patreon.com/altstudio",
-"tintColor": 
-"#e25856",
-"featuredApps": 
-[...],
-"headerURL": 
-"https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826192348.png",
-"apps": 
-[...],
-"news": 
-[...]
+  "name": "iDevPatcher",
+  "subtitle": "Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
+  "description": "Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the files here to sign and use via certificates",
+  "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
+  "website": "https://astear17.github.io/iDevicePatcher",
+  "patreonURL": "",
+  "tintColor": "#e25659",
+  "featuredApps": [
+    "com.locket.Locket",
+    "com.ahmedbafkir.dlipa"
+  ],
+  "headerURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826192348.png",
+  "apps": [
+    {
+      "name": "Locket (Gold)",
+      "bundleIdentifier": "com.locket.Locket",
+      "marketplaceID": "",
+      "developerName": "Locket Widget",
+      "subtitle": "Injected with Gold, EXT (fixExtension)",
+      "localizedDescription": "",
+      "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5143.png",
+      "tintColor": "#dee256",
+      "category": "photo-video",
+      "screenshots": [],
+      "versions": [
+        {
+          "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold_fixEXT.ipa",
+          "size": 135000000,
+          "version": "2.8.0",
+          "buildVersion": "",
+          "date": "2025-08-26T14:13:00+07:00",
+          "localizedDescription": null,
+          "minOSVersion": 14.1
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "patreon": {}
+    },
+    {
+      "name": "DLiPA",
+      "bundleIdentifier": "com.ahmedbafkir.dlipa",
+      "marketplaceID": "",
+      "developerName": "DLiPA",
+      "subtitle": "Hạ phiên bản app trên App Store",
+      "localizedDescription": "",
+      "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5140.png",
+      "tintColor": "#6156e2",
+      "category": "utilities",
+      "screenshots": [],
+      "versions": [
+        {
+          "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa",
+          "size": 469000,
+          "version": "1.0.0",
+          "buildVersion": "",
+          "date": "2025-08-26T14:16:00+07:00",
+          "localizedDescription": null,
+          "minOSVersion": 14.1
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "patreon": {}
+    }
+  ],
+  "news": []
 }
