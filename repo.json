@@ -1,36 +1,24 @@
 {
 "name": 
-"Locket",
-"bundleIdentifier": 
-"com.81xg678xj5.71oshf4bxu",
-"marketplaceID": 
-"",
-"developerName": 
-"Example Developer",
+"iDevPatcher",
 "subtitle": 
-"An awesome app.",
-"localizedDescription": 
-"This is an awesome app only available on AltStore.",
+"Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
+"description": 
+"Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the links provided here to directly install these files using TrollStore without needing to mess with Drive links.",
 "iconURL": 
-"https://i.imgur.com/cy22whi.jpeg",
+"https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
+"website": 
+"https://astear17.github.io/iDevicePatcher",
+"patreonURL": 
+"https://patreon.com/altstudio",
 "tintColor": 
 "#e25856",
-"category": 
-"other",
-"screenshots": 
-[
-],
-"versions": 
-[
-],
-"appPermissions": 
-{
-"entitlements": 
+"featuredApps": 
 [...],
-"privacy": 
-{...}
-},
-"patreon": 
-{
-}
+"headerURL": 
+"https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826192348.png",
+"apps": 
+[...],
+"news": 
+[...]
 }
