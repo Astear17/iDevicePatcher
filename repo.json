@@ -1,61 +1,60 @@
-{
-    "name": "iDevPatcher",
-    "identifier": "astear17.idevicepatcher-repo",
-    "subtitle": "Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
-    "description": "Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the files here to sign and use via certificates.",
-    "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
-    "website": "https://astear17.github.io/iDevicePatcher",
-    "tintColor": "e25659",
-    "apps": [
-        {
-            "name": "Locket (Gold)",
-            "bundleIdentifier": "com.locket.Locket",
-            "developerName": "Locket Widget",
-            "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5143.png",
-            "localizedDescription": "Injected with Gold, EXT (fixExtension)",
-            "subtitle": "Injected with Gold, EXT (fixExtension)",
-            "tintColor": "dee256",
-            "category": "photo-video",
-            "versions": [
-                {
-                    "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold_fixEXT.ipa",
-                    "size": 135000000,
-                    "version": "2.8.0",
-                    "buildVersion": "1",
-                    "date": "2025-08-26T07:13:00Z",
-                    "localizedDescription": "Injected with Gold, EXT (fixExtension)",
-                    "minOSVersion": "14.1"
-                }
-            ],
-            "version": "2.8.0",
-            "versionDate": "2025-08-26T07:13:00Z",
-            "size": 135000000,
-            "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold_fixEXT.ipa"
-        },
-        {
-            "name": "DLiPA",
-            "bundleIdentifier": "com.ahmedbafkir.dlipa",
-            "developerName": "DLiPA",
-            "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5140.png",
-            "localizedDescription": "Hạ phiên bản app trên App Store",
-            "subtitle": "Hạ phiên bản app trên App Store",
-            "tintColor": "6156e2",
-            "category": "utilities",
-            "versions": [
-                {
-                    "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa",
-                    "size": 469000,
-                    "version": "1.0.0",
-                    "buildVersion": "1",
-                    "date": "2025-08-26T07:16:00Z",
-                    "localizedDescription": "Hạ phiên bản app trên App Store",
-                    "minOSVersion": "14.1"
-                }
-            ],
-            "version": "1.0.0",
-            "versionDate": "2025-08-26T07:16:00Z",
-            "size": 469000,
-            "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa"
-        }
-    ]
-}
+    {
+        "name": "iDevPatcher",
+        "identifier": "astear17.idevicepatcher-repo",
+        "subtitle": "Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
+        "description": "Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the files here to sign and use via certificates.",
+        "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
+        "website": "https://astear17.github.io/iDevicePatcher",
+        "tintColor": "e25659",
+        "apps": [
+            {
+                "name": "Locket (Gold)",
+                "bundleIdentifier": "com.locket.Locket",
+                "developerName": "Locket Widget",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5143.png",
+                "localizedDescription": "Injected with Gold, EXT (fixExtension)",
+                "subtitle": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold_fixEXT.ipa",
+                        "size": 135000000,
+                        "version": "2.8.0",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "Injected with Gold, EXT (fixExtension)",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "2.8.0",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold_fixEXT.ipa"
+            },
+            {
+                "name": "DLiPA",
+                "bundleIdentifier": "com.ahmedbafkir.dlipa",
+                "developerName": "DLiPA",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5140.png",
+                "localizedDescription": "Hạ phiên bản app trên App Store",
+                "tintColor": "6156e2",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa",
+                        "size": 469000,
+                        "version": "1.0.0",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:16:00Z",
+                        "localizedDescription": "Hạ phiên bản app trên App Store",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "1.0.0",
+                "versionDate": "2025-08-26T07:16:00Z",
+                "size": 469000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa"
+            }
+        ]
+    }
