@@ -12,7 +12,7 @@
                 "bundleIdentifier": "com.locket.Locket",
                 "developerName": "Locket Widget",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5143.png",
-                "localizedDescription": "Injected with Gold, EXT (fixExtension)",
+                "localizedDescription": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
                 "subtitle": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
                 "tintColor": "dee256",
                 "category": "photo-video",
@@ -38,6 +38,7 @@
                 "developerName": "DLiPA",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5140.png",
                 "localizedDescription": "Hạ phiên bản app trên App Store",
+                "subtitle": "Hạ phiên bản app trên App Store",
                 "tintColor": "6156e2",
                 "category": "utilities",
                 "versions": [
