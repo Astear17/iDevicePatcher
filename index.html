@@ -10,29 +10,30 @@
         body {
             margin: 0;
             font-family: 'Montserrat', Segoe UI, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff 0%, #f9fafb 100%);
+            background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             overflow-x: hidden;
+            color: #f4f6fb;
         }
         .blur-bg {
             position: fixed;
             top: -120px; left: -120px;
             width: 400px; height: 400px;
-            background: radial-gradient(circle, #3b82f6 60%, transparent 100%);
-            filter: blur(80px);
+            background: radial-gradient(circle, #0ea5e9 60%, transparent 100%);
+            filter: blur(70px);
             z-index: 0;
-            opacity: 0.7;
+            opacity: 0.25;
             pointer-events: none;
         }
         .showcase-card {
             margin-top: 40px;
-            background: rgba(255,255,255,0.8);
+            background: rgba(20, 24, 32, 0.6); /* 60% transparent dark */
             border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(70,130,180,0.13);
+            box-shadow: 0 10px 40px rgba(30,40,50,0.18);
             padding: 32px 28px 24px 28px;
             max-width: 430px;
             width: 95vw;
@@ -52,8 +53,8 @@
             border-radius: 50%;
             margin-bottom: 8px;
             border: 2px solid #38bdf8;
-            box-shadow: 0 2px 10px rgba(59,130,246,0.07);
-            background: white;
+            box-shadow: 0 2px 10px rgba(59,130,246,0.10);
+            background: #161b22;
             display: inline-block;
         }
         .showcase-title {
@@ -61,28 +62,29 @@
             font-size: 2rem;
             letter-spacing: 2px;
             margin-bottom: 6px;
-            background: linear-gradient(90deg,#0ea5e9,#f43f5e 80%);
+            background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .showcase-desc {
             font-size: 1.07rem;
-            color: #555;
+            color: #d3d6e1;
             margin-bottom: 18px;
         }
         .showcase-highlight {
             font-size: 1.15rem;
-            background: #eff6ff;
+            background: rgba(25,40,60,0.7);
             border-left: 4px solid #3b82f6;
             padding: 12px 14px;
             border-radius: 7px;
             margin-bottom: 20px;
+            color: #f5faff;
             animation: highlight-fade 3s linear infinite alternate;
         }
         @keyframes highlight-fade {
-            from {background: #eff6ff;}
-            to {background: #fce7f3;}
+            from {background: rgba(25,40,60,0.7);}
+            to {background: rgba(75,20,60,0.5);}
         }
         .button-container {
             display: flex;
@@ -104,29 +106,30 @@
             cursor: pointer;
             transition: background 0.22s, box-shadow 0.22s, transform 0.18s;
             text-decoration: none;
-            color: #fff;
-            box-shadow: 0 2px 12px rgba(59,130,246,0.07);
-            background: linear-gradient(90deg,#2563eb 60%,#0ea5e9 100%);
+            color: #f2f3fa;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.08);
             position: relative;
+            opacity: 0.97;
+            background: linear-gradient(90deg,#2563ebCC 60%,#0ea5e9CC 100%);
         }
         .redirect-button i {
             font-size: 1.3em;
         }
-        .redirect-button.drive    { background: linear-gradient(90deg,#34a853 60%,#4285f4 100%);}
-        .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3c 80%,#2962c9 100%);}
-        .redirect-button.faq     { background: linear-gradient(90deg,#6366f1 60%,#38bdf8 100%);}
-        .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3 70%,#0284c7 100%);}
-        .redirect-button.releases { background: linear-gradient(90deg,#f59e42 60%,#f43f5e 100%);}
-        .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706 70%,#be185d 100%);}
-        .redirect-button.readme  { background: linear-gradient(90deg,#ff3b3b 70%,#ff7e5f 100%);}
-        .redirect-button.readme:hover { background: linear-gradient(90deg,#b91c1c 80%,#f87171 100%);}
-        .redirect-button.sourcelink { background: linear-gradient(90deg,#38bdf8 60%,#3b82f6 100%);}
-        .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1 80%,#2563eb 100%);}
-        .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5e 60%,#fbbf24 100%);}
-        .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123c 80%,#f59e42 100%);}
+        .redirect-button.drive    { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
+        .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3cCC 80%,#2962c9CC 100%);}
+        .redirect-button.faq     { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
+        .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3CC 70%,#0284c7CC 100%);}
+        .redirect-button.releases { background: linear-gradient(90deg,#f59e42CC 60%,#f43f5eCC 100%);}
+        .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706CC 70%,#be185dCC 100%);}
+        .redirect-button.readme  { background: linear-gradient(90deg,#ff3b3bCC 70%,#ff7e5fCC 100%);}
+        .redirect-button.readme:hover { background: linear-gradient(90deg,#b91c1cCC 80%,#f87171CC 100%);}
+        .redirect-button.sourcelink { background: linear-gradient(90deg,#38bdf8CC 60%,#3b82f6CC 100%);}
+        .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1CC 80%,#2563ebCC 100%);}
+        .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5eCC 60%,#fbbf24CC 100%);}
+        .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123cCC 80%,#f59e42CC 100%);}
         .redirect-button:hover {
             transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 6px 22px rgba(59,130,246,0.13);
+            box-shadow: 0 6px 22px rgba(59,130,246,0.18);
         }
         .snowfall-canvas {
             position: absolute;
