@@ -127,6 +127,10 @@
         .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1CC 80%,#2563ebCC 100%);}
         .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5eCC 60%,#fbbf24CC 100%);}
         .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123cCC 80%,#f59e42CC 100%);}
+        .redirect-button.copylockgold { background: linear-gradient(90deg,#fbbf24CC 60%,#f43f5eCC 100%);}
+        .redirect-button.copylockgold:hover { background: linear-gradient(90deg,#eab308CC 80%,#be185dCC 100%);}
+        .redirect-button.copyrepojson { background: linear-gradient(90deg,#22d3eeCC 60%,#2563ebCC 100%);}
+        .redirect-button.copyrepojson:hover { background: linear-gradient(90deg,#0e7490CC 80%,#1e40afCC 100%);}
         .redirect-button:hover {
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 6px 22px rgba(59,130,246,0.18);
@@ -139,6 +143,25 @@
             pointer-events: none;
             z-index: 11;
             display: block;
+        }
+        .copied-tooltip {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #22c55e;
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 7px;
+            font-size: 0.93em;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.18s;
+            z-index: 20;
+        }
+        .show-tooltip {
+            opacity: 1 !important;
         }
         @media (max-width: 600px) {
             .showcase-card {
@@ -167,7 +190,7 @@
             Paste link vào TrollStore để tải, không cần tải file Drive!
         </div>
         <div class="showcase-highlight">
-            <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
+            <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStor[...]
         </div>
         <div class="button-container">
             <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e/" target="_blank" class="redirect-button drive">
@@ -188,6 +211,16 @@
             <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
                 <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
             </a>
+            <!-- Copy buttons start -->
+            <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
+                <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
+                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
+            </button>
+            <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
+                <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
+                <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
+            </button>
+            <!-- Copy buttons end -->
         </div>
     </div>
     <script>
@@ -250,6 +283,36 @@
     window.addEventListener('resize', initSnowflakes);
     initSnowflakes();
     snowfallLoop();
+
+    // Copy link function for new buttons
+    function copyLink(type) {
+        let link = "";
+        let tooltipEl = null;
+        if (type === "lockgold") {
+            link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
+            tooltipEl = document.getElementById("tooltip-lockgold");
+        } else if (type === "repojson") {
+            link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
+            tooltipEl = document.getElementById("tooltip-repojson");
+        }
+        if (link) {
+            navigator.clipboard.writeText(link).then(function() {
+                if (tooltipEl) {
+                    tooltipEl.classList.add('show-tooltip');
+                    setTimeout(() => { tooltipEl.classList.remove('show-tooltip'); }, 1650);
+                }
+            }, function() {
+                if (tooltipEl) {
+                    tooltipEl.innerText = "Không thể copy";
+                    tooltipEl.classList.add('show-tooltip');
+                    setTimeout(() => { 
+                        tooltipEl.innerText = "Đã copy!";
+                        tooltipEl.classList.remove('show-tooltip'); 
+                    }, 1650);
+                }
+            });
+        }
+    }
     </script>
 </body>
 </html>
