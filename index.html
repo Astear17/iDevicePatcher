@@ -3,100 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iDevPatcher</title>
+    <title>iDevicePatcher</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
         body {
+            margin: 0;
             font-family: 'Montserrat', Segoe UI, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f9fafb 100%);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f4f7f9;
-            margin: 0;
-            color: #333;
+            justify-content: flex-start;
+            overflow-x: hidden;
         }
-
+        .blur-bg {
+            position: fixed;
+            top: -120px; left: -120px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #3b82f6 60%, transparent 100%);
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .showcase-card {
+            margin-top: 40px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(70,130,180,0.13);
+            padding: 32px 28px 24px 28px;
+            max-width: 430px;
+            width: 95vw;
+            z-index: 1;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            animation: pop-in 1s cubic-bezier(.4,2,.6,1.2);
+        }
+        @keyframes pop-in {
+            0% {transform: scale(0.9) translateY(60px); opacity: 0;}
+            100% {transform: scale(1) translateY(0); opacity: 1;}
+        }
+        .logo {
+            font-size: 2.9rem;
+            margin-bottom: 8px;
+        }
+        .showcase-title {
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            background: linear-gradient(90deg,#0ea5e9,#f43f5e 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .showcase-desc {
+            font-size: 1.07rem;
+            color: #555;
+            margin-bottom: 18px;
+        }
+        .showcase-highlight {
+            font-size: 1.15rem;
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 14px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            animation: highlight-fade 3s linear infinite alternate;
+        }
+        @keyframes highlight-fade {
+            from {background: #eff6ff;}
+            to {background: #fce7f3;}
+        }
         .button-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 15px; 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 15px;
+            z-index: 2;
         }
-
         .redirect-button {
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: flex-start;
+            padding: 15px 24px;
+            font-size: 1.14rem;
+            font-weight: 600;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            transition: background 0.22s, box-shadow 0.22s, transform 0.18s;
             text-decoration: none;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.07);
+            background: linear-gradient(90deg,#2563eb 60%,#0ea5e9 100%);
+            position: relative;
         }
-
+        .redirect-button i {
+            font-size: 1.3em;
+        }
+        .redirect-button.faq { background: linear-gradient(90deg,#6366f1 60%,#38bdf8 100%);}
+        .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3 70%,#0284c7 100%);}
+        .redirect-button.releases { background: linear-gradient(90deg,#f59e42 60%,#f43f5e 100%);}
+        .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706 70%,#be185d 100%);}
+        .redirect-button.readme { background: linear-gradient(90deg,#ff3b3b 70%,#ff7e5f 100%);}
+        .redirect-button.readme:hover { background: linear-gradient(90deg,#b91c1c 80%,#f87171 100%);}
+        .redirect-button.sourcelink { background: linear-gradient(90deg,#38bdf8 60%,#3b82f6 100%);}
+        .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1 80%,#2563eb 100%);}
+        .redirect-button.tiktok { background: linear-gradient(90deg,#f43f5e 60%,#fbbf24 100%);}
+        .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123c 80%,#f59e42 100%);}
         .redirect-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 22px rgba(59,130,246,0.13);
         }
-      
-        .redirect-button.faq {
-            background-color: #4285F4;
-        }
-        .redirect-button.faq:hover {
-            background-color: #357ae8;
-        }
-
-        .redirect-button.releases {
-            background-color: #007bff;
-        }
-        .redirect-button.releases:hover {
-            background-color: #0056b3;
-        }
-
-        .redirect-button.readme {
-            background-color: #FF0000;
-        }
-        .redirect-button.readme:hover {
-            background-color: #cc0000;
-        }
-
-        .redirect-button.sourcelink {
-            background-color: #1877F2;
-        }
-        .redirect-button.sourcelink:hover {
-            background-color: #145cb3;
-        }
-
-        .redirect-button.tiktok {
-            background-color: #1DA1F2;
-        }
-        .redirect-button.tiktok:hover {
-            background-color: #0c85d0;
+        @media (max-width: 600px) {
+            .showcase-card {
+                padding: 18px 6vw 16px 6vw;
+            }
+            .button-container .redirect-button {
+                font-size: 1rem;
+                padding: 12px 14px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="button-container">
-        <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">FAQ (Câu hỏi thường gặp)</a>
-
-        <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button releases">(Releases) Tải IPA/TIPA ở đây</a>>
-
-        <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">Giới thiệu về iDevPatcher</a>
-
-        <a href="https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md" target="_blank" class="redirect-button sourcelink">Link tải direct install TrollStore</a>
-
-        <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">TikTok: @hyper_astear.17</a>
+    <div class="blur-bg"></div>
+    <div class="showcase-card">
+        <div class="logo">🍏</div>
+        <div class="showcase-title">iDevicePatcher</div>
+        <div class="showcase-desc">
+            Nơi tổng hợp IPA mình đã up trên TikTok <b>@hyper_astear.17</b>.<br>
+            Paste link vào TrollStore để tải, không cần vòng vo drive!
+        </div>
+        <div class="showcase-highlight">
+            <span><i class="fa-solid fa-fire"></i> Hot: <b>Releases 2.0</b> vừa lên sóng!<br>Trải nghiệm tải trực tiếp IPA/TIPA cực nhanh 🚀</span>
+        </div>
+        <div class="button-container">
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">
+                <i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button releases">
+                <i class="fa-solid fa-download"></i> (Releases) Tải IPA/TIPA ở đây
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">
+                <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md" target="_blank" class="redirect-button sourcelink">
+                <i class="fa-solid fa-link"></i> Link tải direct install TrollStore
+            </a>
+            <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
+                <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
+            </a>
+        </div>
     </div>
-
 </body>
-  </html>
+</html>
