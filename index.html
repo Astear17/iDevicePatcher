@@ -132,7 +132,9 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             width: 100vw;
-            height: 120px;
+            height: 45vh;
+            min-height: 200px;
+            max-height: 60vh;
             pointer-events: none;
             z-index: 11;
             display: block;
@@ -145,7 +147,7 @@
                 font-size: 1rem;
                 padding: 12px 14px;
             }
-            .snowfall-canvas { height: 85px; }
+            .snowfall-canvas { height: 35vh; min-height: 100px; }
         }
     </style>
 </head>
@@ -188,14 +190,15 @@
         </div>
     </div>
     <script>
-    // Canvas Snowfall like bvnsupport.github.io, only at top, disappears after 5s
+    // Canvas Snowfall, always active, covers nearly half screen
     const canvas = document.getElementById('snowfall-canvas');
     const ctx = canvas.getContext('2d');
     let snowflakes = [];
-    let snowActive = true;
     function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = 120;
+        // 45vh, min 200px, max 60vh
+        const target = Math.max(200, Math.min(window.innerHeight * 0.45, window.innerHeight * 0.6));
+        canvas.height = target;
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
@@ -204,8 +207,8 @@
         return {
             x: Math.random() * canvas.width,
             y: Math.random() * -canvas.height,
-            r: Math.random() * 2 + 1.8,
-            d: Math.random() * 1 + 0.7,
+            r: Math.random() * 2.2 + 1.7,
+            d: Math.random() * 1.1 + 0.7,
             a: Math.random() * Math.PI * 2
         };
     }
@@ -234,27 +237,20 @@
         }
     }
     function snowfallLoop() {
-        if (!snowActive) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            return;
-        }
         drawSnowflakes();
         requestAnimationFrame(snowfallLoop);
     }
     // Init snowflakes
     function initSnowflakes() {
         snowflakes = [];
-        for (let i = 0; i < 45; i++) {
+        let flakeCount = Math.floor(canvas.width / 19) + 35;
+        for (let i = 0; i < flakeCount; i++) {
             snowflakes.push(createSnowflake());
         }
     }
+    window.addEventListener('resize', initSnowflakes);
     initSnowflakes();
     snowfallLoop();
-
-    setTimeout(() => {
-        snowActive = false;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }, 5000);
     </script>
 </body>
 </html>
