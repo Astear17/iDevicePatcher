@@ -45,9 +45,16 @@
             0% {transform: scale(0.9) translateY(60px); opacity: 0;}
             100% {transform: scale(1) translateY(0); opacity: 1;}
         }
-        .logo {
-            font-size: 2.9rem;
+        .logo-img {
+            width: 2.9rem;
+            height: 2.9rem;
+            object-fit: cover;
+            border-radius: 50%;
             margin-bottom: 8px;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 2px 10px rgba(59,130,246,0.07);
+            background: white;
+            display: inline-block;
         }
         .showcase-title {
             font-weight: bold;
@@ -105,19 +112,45 @@
         .redirect-button i {
             font-size: 1.3em;
         }
-        .redirect-button.faq { background: linear-gradient(90deg,#6366f1 60%,#38bdf8 100%);}
+        .redirect-button.drive    { background: linear-gradient(90deg,#34a853 60%,#4285f4 100%);}
+        .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3c 80%,#2962c9 100%);}
+        .redirect-button.faq     { background: linear-gradient(90deg,#6366f1 60%,#38bdf8 100%);}
         .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3 70%,#0284c7 100%);}
         .redirect-button.releases { background: linear-gradient(90deg,#f59e42 60%,#f43f5e 100%);}
         .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706 70%,#be185d 100%);}
-        .redirect-button.readme { background: linear-gradient(90deg,#ff3b3b 70%,#ff7e5f 100%);}
+        .redirect-button.readme  { background: linear-gradient(90deg,#ff3b3b 70%,#ff7e5f 100%);}
         .redirect-button.readme:hover { background: linear-gradient(90deg,#b91c1c 80%,#f87171 100%);}
         .redirect-button.sourcelink { background: linear-gradient(90deg,#38bdf8 60%,#3b82f6 100%);}
         .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1 80%,#2563eb 100%);}
-        .redirect-button.tiktok { background: linear-gradient(90deg,#f43f5e 60%,#fbbf24 100%);}
+        .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5e 60%,#fbbf24 100%);}
         .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123c 80%,#f59e42 100%);}
         .redirect-button:hover {
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 6px 22px rgba(59,130,246,0.13);
+        }
+        /* Snowfall styles */
+        .snowfall-container {
+            pointer-events: none;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            width: 100vw;
+            height: 120px;
+            z-index: 10;
+            overflow: hidden;
+        }
+        .snowflake {
+            position: absolute;
+            top: -30px;
+            color: #fff;
+            opacity: 0.85;
+            font-size: 1.1em;
+            will-change: transform, opacity;
+            filter: drop-shadow(0 0 2px #e0e7ff);
+            animation: fall-snow linear forwards;
+        }
+        @keyframes fall-snow {
+            from {transform: translateY(0);}
+            to   {transform: translateY(120px);}
         }
         @media (max-width: 600px) {
             .showcase-card {
@@ -127,13 +160,19 @@
                 font-size: 1rem;
                 padding: 12px 14px;
             }
+            .snowfall-container { height: 85px; }
         }
     </style>
 </head>
 <body>
     <div class="blur-bg"></div>
+    <div class="snowfall-container" id="snowfall"></div>
     <div class="showcase-card">
-        <div class="logo">🍏</div>
+        <img
+            src="https://github.com/Astear17/iDevicePatcher/raw/main/Untitled28_20250826191037.png"
+            alt="Logo"
+            class="logo-img"
+        >
         <div class="showcase-title">iDevicePatcher</div>
         <div class="showcase-desc">
             Nơi tổng hợp IPA mình đã up trên TikTok <b>@hyper_astear.17</b>.<br>
@@ -143,6 +182,9 @@
             <span><i class="fa-solid fa-fire"></i> Hot: <b>Releases 2.0</b> vừa lên sóng!<br>Trải nghiệm tải trực tiếp IPA/TIPA cực nhanh 🚀</span>
         </div>
         <div class="button-container">
+            <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qcSF1UqmQPy7e/" target="_blank" class="redirect-button drive">
+                <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
+            </a>
             <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">
                 <i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)
             </a>
@@ -160,5 +202,35 @@
             </a>
         </div>
     </div>
+    <script>
+    // Simple Snowfall for 5 seconds at top
+    const SNOWFALL_TIME = 5000;
+    const snowfall = document.getElementById('snowfall');
+    let snowActive = true;
+
+    function createSnowflake() {
+        const snowflake = document.createElement('span');
+        snowflake.className = 'snowflake';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.fontSize = (Math.random() * 0.8 + 1) + 'em';
+        snowflake.style.opacity = Math.random() * 0.4 + 0.6;
+        snowflake.textContent = '❄️';
+        snowflake.style.animationDuration = (Math.random() * 1.3 + 1.5) + 's';
+        snowfall.appendChild(snowflake);
+        setTimeout(() => snowfall.removeChild(snowflake), 1650);
+    }
+
+    let snowInterval = setInterval(() => {
+        if (snowActive) {
+            for (let i = 0; i < 2 + Math.floor(Math.random()*2); ++i)
+                createSnowflake();
+        }
+    }, 160);
+
+    setTimeout(() => {
+        snowActive = false;
+        snowfall.innerHTML = '';
+    }, SNOWFALL_TIME);
+    </script>
 </body>
 </html>
