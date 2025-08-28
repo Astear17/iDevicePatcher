@@ -132,12 +132,10 @@
             box-shadow: 0 6px 22px rgba(59,130,246,0.18);
         }
         .snowfall-canvas {
-            position: absolute;
-            top: 0; left: 0; right: 0;
+            position: fixed;
+            top: 0; left: 0;
             width: 100vw;
-            height: 45vh;
-            min-height: 200px;
-            max-height: 60vh;
+            height: 100vh;
             pointer-events: none;
             z-index: 11;
             display: block;
@@ -199,9 +197,7 @@
     let snowflakes = [];
     function resizeCanvas() {
         canvas.width = window.innerWidth;
-        // 45vh, min 200px, max 60vh
-        const target = Math.max(200, Math.min(window.innerHeight * 0.45, window.innerHeight * 0.6));
-        canvas.height = target;
+        canvas.height = window.innerHeight;
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
@@ -246,7 +242,7 @@
     // Init snowflakes
     function initSnowflakes() {
         snowflakes = [];
-        let flakeCount = Math.floor(canvas.width / 19) + 35;
+        let flakeCount = Math.floor(canvas.width / 19) + 25;
         for (let i = 0; i < flakeCount; i++) {
             snowflakes.push(createSnowflake());
         }
