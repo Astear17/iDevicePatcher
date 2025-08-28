@@ -128,29 +128,14 @@
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 6px 22px rgba(59,130,246,0.13);
         }
-        /* Snowfall styles */
-        .snowfall-container {
-            pointer-events: none;
+        .snowfall-canvas {
             position: absolute;
             top: 0; left: 0; right: 0;
             width: 100vw;
             height: 120px;
-            z-index: 10;
-            overflow: hidden;
-        }
-        .snowflake {
-            position: absolute;
-            top: -30px;
-            color: #fff;
-            opacity: 0.85;
-            font-size: 1.1em;
-            will-change: transform, opacity;
-            filter: drop-shadow(0 0 2px #e0e7ff);
-            animation: fall-snow linear forwards;
-        }
-        @keyframes fall-snow {
-            from {transform: translateY(0);}
-            to   {transform: translateY(120px);}
+            pointer-events: none;
+            z-index: 11;
+            display: block;
         }
         @media (max-width: 600px) {
             .showcase-card {
@@ -160,13 +145,13 @@
                 font-size: 1rem;
                 padding: 12px 14px;
             }
-            .snowfall-container { height: 85px; }
+            .snowfall-canvas { height: 85px; }
         }
     </style>
 </head>
 <body>
     <div class="blur-bg"></div>
-    <div class="snowfall-container" id="snowfall"></div>
+    <canvas class="snowfall-canvas" id="snowfall-canvas"></canvas>
     <div class="showcase-card">
         <img
             src="https://github.com/Astear17/iDevicePatcher/raw/main/Untitled28_20250826191037.png"
@@ -176,10 +161,10 @@
         <div class="showcase-title">iDevicePatcher</div>
         <div class="showcase-desc">
             Nơi tổng hợp IPA mình đã up trên TikTok <b>@hyper_astear.17</b>.<br>
-            Paste link vào TrollStore để tải, không cần tải file Drive!
+            Paste link vào TrollStore để tải, không cần vòng vo drive!
         </div>
         <div class="showcase-highlight">
-            <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
+            <span><i class="fa-solid fa-fire"></i> Hot: <b>Releases 2.0</b> vừa lên sóng!<br>Trải nghiệm tải trực tiếp IPA/TIPA cực nhanh 🚀</span>
         </div>
         <div class="button-container">
             <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qcSF1UqmQPy7e/" target="_blank" class="redirect-button drive">
@@ -203,34 +188,73 @@
         </div>
     </div>
     <script>
-    // Simple Snowfall for 5 seconds at top
-    const SNOWFALL_TIME = 5000;
-    const snowfall = document.getElementById('snowfall');
+    // Canvas Snowfall like bvnsupport.github.io, only at top, disappears after 5s
+    const canvas = document.getElementById('snowfall-canvas');
+    const ctx = canvas.getContext('2d');
+    let snowflakes = [];
     let snowActive = true;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = 120;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
     function createSnowflake() {
-        const snowflake = document.createElement('span');
-        snowflake.className = 'snowflake';
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.fontSize = (Math.random() * 0.8 + 1) + 'em';
-        snowflake.style.opacity = Math.random() * 0.4 + 0.6;
-        snowflake.textContent = '❄️';
-        snowflake.style.animationDuration = (Math.random() * 1.3 + 1.5) + 's';
-        snowfall.appendChild(snowflake);
-        setTimeout(() => snowfall.removeChild(snowflake), 1650);
+        return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * -canvas.height,
+            r: Math.random() * 2 + 1.8,
+            d: Math.random() * 1 + 0.7,
+            a: Math.random() * Math.PI * 2
+        };
     }
-
-    let snowInterval = setInterval(() => {
-        if (snowActive) {
-            for (let i = 0; i < 2 + Math.floor(Math.random()*2); ++i)
-                createSnowflake();
+    function drawSnowflakes() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(255,255,255,0.95)';
+        ctx.beginPath();
+        for (let i = 0; i < snowflakes.length; i++) {
+            const f = snowflakes[i];
+            ctx.moveTo(f.x, f.y);
+            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
         }
-    }, 160);
+        ctx.fill();
+        moveSnowflakes();
+    }
+    function moveSnowflakes() {
+        for (let i = 0; i < snowflakes.length; i++) {
+            let f = snowflakes[i];
+            f.y += Math.pow(f.d, 2) + 0.45;
+            f.x += Math.sin(f.a) * 0.7;
+            f.a += 0.01;
+            if (f.y > canvas.height) {
+                snowflakes[i] = createSnowflake();
+                snowflakes[i].y = 0;
+            }
+        }
+    }
+    function snowfallLoop() {
+        if (!snowActive) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            return;
+        }
+        drawSnowflakes();
+        requestAnimationFrame(snowfallLoop);
+    }
+    // Init snowflakes
+    function initSnowflakes() {
+        snowflakes = [];
+        for (let i = 0; i < 45; i++) {
+            snowflakes.push(createSnowflake());
+        }
+    }
+    initSnowflakes();
+    snowfallLoop();
 
     setTimeout(() => {
         snowActive = false;
-        snowfall.innerHTML = '';
-    }, SNOWFALL_TIME);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }, 5000);
     </script>
 </body>
 </html>
