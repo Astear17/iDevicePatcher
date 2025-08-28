@@ -38,13 +38,13 @@
                 "developerName": "Zsign.app",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5200.png",
                 "localizedDescription": "ZSign cho iOS 15 tro len",
-                "subtitle": "ZSign cho iOS 15 tro len",
+                "subtitle": "ZSign 1.5.8 cho iOS 15 trở lên",
                 "tintColor": "dee256",
                 "category": "utilities",
                 "versions": [
                     {
                         "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa",
-                        "size": 15000000,
+                        "size": 16000000,
                         "version": "1.5.8",
                         "buildVersion": "1",
                         "date": "2025-08-26T07:13:00Z",
@@ -52,10 +52,10 @@
                         "minOSVersion": "15.0"
                     }
                 ],
-                "version": "2.8.0",
+                "version": "1.5.8",
                 "versionDate": "2025-08-26T07:13:00Z",
-                "size": 135000000,
-                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold_@thisismanpreets_apptesters.org.ipa"
+                "size": 16000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa"
             },
             {
                 "name": "DLiPA",
