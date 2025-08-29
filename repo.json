@@ -11,33 +11,33 @@
                 "name": "Locket (Gold)",
                 "bundleIdentifier": "com.locket.Locket",
                 "developerName": "Locket Widget",
-                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5143.png",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/LocketGold.png",
                 "localizedDescription": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
                 "subtitle": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
                 "tintColor": "dee256",
                 "category": "photo-video",
                 "versions": [
                     {
-                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold_@thisismanpreets_apptesters.org.ipa",
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa",
                         "size": 135000000,
                         "version": "2.8.0",
                         "buildVersion": "1",
                         "date": "2025-08-26T07:13:00Z",
-                        "localizedDescription": "Injected with Gold, EXT (fixExtension)",
+                        "localizedDescription": "Đã tiêm Gold - chỉ 5 giây (15s -> VPN/Proxy USA), inject_EXT (fixExtension)",
                         "minOSVersion": "14.1"
                     }
                 ],
                 "version": "2.8.0",
                 "versionDate": "2025-08-26T07:13:00Z",
                 "size": 135000000,
-                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold_@thisismanpreets_apptesters.org.ipa"
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa"
             },
             {
-                "name": "Zsign iOS 15+",
+                "name": "Zsign",
                 "bundleIdentifier": "com.zsign.app",
                 "developerName": "Zsign.app",
-                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5200.png",
-                "localizedDescription": "ZSign cho iOS 15 tro len",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ZSign.png",
+                "localizedDescription": "ZSign cho iOS 15 trở lên",
                 "subtitle": "ZSign 1.5.8 cho iOS 15 trở lên",
                 "tintColor": "dee256",
                 "category": "utilities",
@@ -48,7 +48,7 @@
                         "version": "1.5.8",
                         "buildVersion": "1",
                         "date": "2025-08-26T07:13:00Z",
-                        "localizedDescription": "ZSign iOS 15",
+                        "localizedDescription": "ZSign 1.5.8 cho iOS 15 trở lên",
                         "minOSVersion": "15.0"
                     }
                 ],
@@ -58,10 +58,35 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa"
             },
             {
+                "name": "YTMusicUltimate",
+                "bundleIdentifier": "com.google.ios.youtubemusic",
+                "developerName": "Google",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YTMusic.png",
+                "localizedDescription": "đã tiêm YTMusicUltimate. Premium trá hình",
+                "subtitle": "đã tiêm YTMusicUltimate. Premium trá hình",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa",
+                        "size": 83500000,
+                        "version": "7.21.1",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "đã tiêm YTMusicUltimate. Premium trá hình",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "7.21.1",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 83500000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa"
+            },
+            {
                 "name": "DLiPA",
                 "bundleIdentifier": "com.ahmedbafkir.dlipa",
                 "developerName": "DLiPA",
-                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/IMG_5140.png",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/DLiPA.png",
                 "localizedDescription": "Hạ phiên bản app trên App Store",
                 "subtitle": "Hạ phiên bản app trên App Store",
                 "tintColor": "6156e2",
