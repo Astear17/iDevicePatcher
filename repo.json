@@ -58,6 +58,31 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa"
             },
             {
+                "name": "Feather",
+                "bundleIdentifier": "kh.crysalis.feather",
+                "developerName": "Feather",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Feather.png",
+                "localizedDescription": "Feather cho iOS 15 trở lên",
+                "subtitle": "Feather 1.3.1 cho iOS 15 trở lên",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa",
+                        "size": 12100000,
+                        "version": "1.3.1",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "Feather 1.3.1 cho iOS 15 trở lên",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "1.3.1",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 12100000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa"
+            },
+            {
                 "name": "YTMusicUltimate",
                 "bundleIdentifier": "com.google.ios.youtubemusic",
                 "developerName": "Google",
