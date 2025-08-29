@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iDevicePatcher</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: 'Montserrat', Segoe UI, sans-serif;
+            font-family: -apple-system, 'SF Pro Display', Segoe UI, sans-serif;
             background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
             min-height: 100vh;
             display: flex;
@@ -94,7 +93,6 @@
             z-index: 2;
         }
         .redirect-button {
-            font-family: 'Montserrat', Segoe UI, sans-serif;
             display: flex;
             align-items: center;
             gap: 14px;
@@ -112,6 +110,8 @@
             position: relative;
             opacity: 0.97;
             background: linear-gradient(90deg,#2563ebCC 60%,#0ea5e9CC 100%);
+            /* Explicitly set the font to match the body, fixing the button issue */
+            font-family: -apple-system, 'SF Pro Display', Segoe UI, sans-serif;
         }
         .redirect-button i {
             font-size: 1.3em;
@@ -212,7 +212,6 @@
             <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
                 <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
             </a>
-            <!-- Copy buttons start -->
             <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
                 <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
                 <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
@@ -221,8 +220,7 @@
                 <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
                 <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
             </button>
-            <!-- Copy buttons end -->
-        </div>
+            </div>
     </div>
     <script>
     // Canvas Snowfall, always active, covers nearly half screen
