@@ -88,7 +88,7 @@
                 "developerName": "Google",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YouTube.png",
                 "localizedDescription": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)",
-                "subtitle": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)h",
+                "subtitle": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)",
                 "tintColor": "dee256",
                 "category": "utilities",
                 "versions": [
@@ -102,10 +102,35 @@
                         "minOSVersion": "15.0"
                     }
                 ],
-                "version": 20.15.1",
+                "version": "20.15.1",
                 "versionDate": "2025-08-26T07:13:00Z",
                 "size": 114000000,
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa"
+            },
+            {
+                "name": "BHTikTokPlus",
+                "bundleIdentifier": "com.zhiliaoapp.musically",
+                "developerName": "ZhiliaoApp",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/BHTikTok.png",
+                "localizedDescription": "TikTok nhưng nó nhiều tính năng hơn, inject BHTikTokPlus",
+                "subtitle": "TikTok nhưng nó nhiều tính năng hơn, inject BHTikTokPlus",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa",
+                        "size": 352000000,
+                        "version": "41.3.0",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "TikTok nhưng nó nhiều tính năng hơn, inject BHTikTokPlus",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "41.3.0",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 352000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa"
             },
             {
                 "name": "DLiPA",
