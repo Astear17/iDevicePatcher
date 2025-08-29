@@ -83,6 +83,31 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa"
             },
             {
+                "name": "EeveeSpotify",
+                "bundleIdentifier": "com.spotify.client",
+                "developerName": "Spotify AB",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Spotify.png",
+                "localizedDescription": "Spotify Premium, log Google/Facebook",
+                "subtitle": "Spotify Premium, log Google/Facebook",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa",
+                        "size": 80200000,
+                        "version": "9.0.68",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "Spotify Premium, log Google/Facebook",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "9.0.68",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 80200000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa"
+            },
+            {
                 "name": "YTMusicUltimate",
                 "bundleIdentifier": "com.google.ios.youtubemusic",
                 "developerName": "Google",
