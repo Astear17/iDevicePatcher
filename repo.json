@@ -82,6 +82,31 @@
                 "size": 83500000,
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa"
             },
+              {
+                "name": "YouTubeOLED",
+                "bundleIdentifier": "com.google.ios.youtube",
+                "developerName": "Google",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YouTube.png",
+                "localizedDescription": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)",
+                "subtitle": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)h",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa",
+                        "size": 114000000,
+                        "version": "20.15.1",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "YouTubeOLED + YouTubePlus (nói chung là YT Premium trá hình)",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": 20.15.1",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 114000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa"
+            },
             {
                 "name": "DLiPA",
                 "bundleIdentifier": "com.ahmedbafkir.dlipa",
