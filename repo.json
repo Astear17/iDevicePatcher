@@ -108,6 +108,31 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa"
             },
             {
+                "name": "MBill",
+                "bundleIdentifier": "tiptip.mb.bank",
+                "developerName": "TipTip",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/MB_Bank.png",
+                "localizedDescription": "Fake thông báo biến động số dư MBBank",
+                "subtitle": "Fake thông báo biến động số dư MBBank",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa",
+                        "size": 750000,
+                        "version": "1.0",
+                        "buildVersion": "1",
+                        "date": "2025-08-26T07:13:00Z",
+                        "localizedDescription": "Fake thông báo biến động số dư MBBank",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "1.0",
+                "versionDate": "2025-08-26T07:13:00Z",
+                "size": 750000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa"
+            },
+            {
                 "name": "BHTikTokPlus",
                 "bundleIdentifier": "com.zhiliaoapp.musically",
                 "developerName": "ZhiliaoApp",
