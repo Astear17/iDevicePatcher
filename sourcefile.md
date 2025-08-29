@@ -1,25 +1,38 @@
-Cách hoạt đông của file này là chỉ để lấy link dán vào TrollStore.
+AppStore++_TrollStore_v1.0.3-2.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa**
 
-Locket Gold V5, cre Night Market Server
-**https://github.com/NightmarketServer/Locket/raw/refs/heads/main/Locket-V5.module**
+DLiPA_v1.0.0.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa**
 
-AppStore++_TrollStore_v1.0.3-2.ipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/AppStore++_TrollStore_v1.0.3-2.ipa**
+Locket_v2.8.0_Gold.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa**
 
-DLiPA_v1.0.0.ipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/DLiPA_v1.0.0.ipa**
+MDC0_v1.0_TrollStore.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MDC0_v1.0_TrollStore.ipa**
 
-Shadowrocket_2.2.67.tipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/Shadowrocket_2.2.67.tipa**
+Shadowrocket_2.2.67_TrollStore.tipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_2.2.67_TrollStore.tipa**
 
-Troll.Cleaner.tipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/Troll.Cleaner.tipa**
+TikTok_BHTikTokPlus_v41.3.0.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa**
 
-TrollFools-SLPEdition3.7-1.2.ipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/TrollFools-SLPEdition3.7-1.2.ipa**
+TrollCleaner_TrollStore.tipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollCleaner_TrollStore.tipa**
 
-TrollOpen_2.1_FreeVersion.ipa:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/TrollOpen_2.1_FreeVersion.ipa**
+TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa**
 
-TrollStore.tar:
-**https://github.com/Astear17/iDevicePatcher/releases/download/1.0/TrollStore.tar**
+TrollOpen_2.1_FreeVersion_TrollStore.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_FreeVersion_TrollStore.ipa**
+
+TrollStore_2.1_BVNRepo_VietHoa.tar:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar**
+
+YouTube_v20.15.1_Premium.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa**
+
+YTMusicUltimate_v7.21.1.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa**
+
+Zsign_1.5.8_1745765925.ipa:<br>
+**https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa**
