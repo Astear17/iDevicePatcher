@@ -249,6 +249,12 @@
                 <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
             </button>
         </div>
+        <div class="altstore-button-wrapper">
+            <button class="redirect-button faq centered-buttons" onclick="copyLink('nightmarket')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Shadowrocket - Night Market
+                <span class="copied-tooltip" id="tooltip-nightmarket">Đã copy!</span>
+            </button>
+        </div>
         
         <hr>
         <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
@@ -440,6 +446,9 @@
             if (type === "repojson") {
                 link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
                 tooltipEl = document.getElementById("tooltip-repojson");
+            } else if (type === "nightmarket") {
+                link = "https://nightmarket.site/modules";
+                tooltipEl = document.getElementById("tooltip-nightmarket");
             } else if (type === "ytpremiumv2") {
                 link = "https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremiumV2.module";
                 tooltipEl = document.getElementById("tooltip-ytpremiumv2");
