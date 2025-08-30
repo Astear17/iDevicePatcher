@@ -50,16 +50,16 @@
             100% {transform: scale(1) translateY(0); opacity: 1;}
         }
         .logo-img {
-        width: 4.35rem;
-        height: 4.35rem;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 8px;
-        border: 2px solid #38bdf8;
-        box-shadow: 0 2px 10px rgba(59,130,246,0.10);
-        background: #161b22;
-        display: inline-block;
-            }
+            width: 4.35rem;
+            height: 4.35rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 2px 10px rgba(59,130,246,0.10);
+            background: #161b22;
+            display: inline-block;
+        }
         .showcase-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
@@ -120,7 +120,7 @@
         .redirect-button i {
             font-size: 1.3em;
         }
-        .redirect-button.drive    { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
+        .redirect-button.drive   { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
         .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3cCC 80%,#2962c9CC 100%);}
         .redirect-button.faq     { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
         .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3CC 70%,#0284c7CC 100%);}
@@ -169,11 +169,19 @@
             opacity: 1 !important;
         }
         hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    height: 0;
-    margin: 18px 0;
-}
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            height: 0;
+            margin: 18px 0;
+        }
+        .button-header {
+            color: #f2f3fa;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 8px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -193,127 +201,128 @@
         <div class="showcase-highlight">
             <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
         </div>
-<div class="button-container">
-    <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
-        <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
-    </a>
-    <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">
-        <i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)
-    </a>
-    <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button releases">
-        <i class="fa-solid fa-download"></i> (Releases) Tải IPA/TIPA ở đây
-    </a>
-    <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">
-        <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
-    </a>
-    <a href="https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md" target="_blank" class="redirect-button sourcelink">
-        <i class="fa-solid fa-link"></i> Link tải direct install TrollStore
-    </a>
-    <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
-    <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
-    </a>
-    <hr>
-    <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
-        <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
-        <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
-    </button>
-    <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
-        <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
-        <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
-    </button>
-</div>
-            </div>
+        <div class="button-container">
+            <h3 class="button-header">Extensions</h3>
+            <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
+                <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">
+                <i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button releases">
+                <i class="fa-solid fa-download"></i> (Releases) Tải IPA/TIPA ở đây
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">
+                <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md" target="_blank" class="redirect-button sourcelink">
+                <i class="fa-solid fa-link"></i> Link tải direct install TrollStore
+            </a>
+            <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
+                <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
+            </a>
+            <hr>
+            <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
+            <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
+                <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
+                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
+            </button>
+            <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
+                <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
+                <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
+            </button>
+        </div>
     </div>
     <script>
-    // Canvas Snowfall, always active, covers nearly half screen
-    const canvas = document.getElementById('snowfall-canvas');
-    const ctx = canvas.getContext('2d');
-    let snowflakes = [];
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    function createSnowflake() {
-        return {
-            x: Math.random() * canvas.width,
-            y: Math.random() * -canvas.height,
-            r: Math.random() * 2.2 + 1.7,
-            d: Math.random() * 1.1 + 0.7,
-            a: Math.random() * Math.PI * 2
-        };
-    }
-    function drawSnowflakes() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'rgba(255,255,255,0.95)';
-        ctx.beginPath();
-        for (let i = 0; i < snowflakes.length; i++) {
-            const f = snowflakes[i];
-            ctx.moveTo(f.x, f.y);
-            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+        // Canvas Snowfall, always active, covers nearly half screen
+        const canvas = document.getElementById('snowfall-canvas');
+        const ctx = canvas.getContext('2d');
+        let snowflakes = [];
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
-        ctx.fill();
-        moveSnowflakes();
-    }
-    function moveSnowflakes() {
-        for (let i = 0; i < snowflakes.length; i++) {
-            let f = snowflakes[i];
-            f.y += Math.pow(f.d, 2) + 0.45;
-            f.x += Math.sin(f.a) * 0.7;
-            f.a += 0.01;
-            if (f.y > canvas.height) {
-                snowflakes[i] = createSnowflake();
-                snowflakes[i].y = 0;
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createSnowflake() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * -canvas.height,
+                r: Math.random() * 2.2 + 1.7,
+                d: Math.random() * 1.1 + 0.7,
+                a: Math.random() * Math.PI * 2
+            };
+        }
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255,255,255,0.95)';
+            ctx.beginPath();
+            for (let i = 0; i < snowflakes.length; i++) {
+                const f = snowflakes[i];
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+            }
+            ctx.fill();
+            moveSnowflakes();
+        }
+        function moveSnowflakes() {
+            for (let i = 0; i < snowflakes.length; i++) {
+                let f = snowflakes[i];
+                f.y += Math.pow(f.d, 2) + 0.45;
+                f.x += Math.sin(f.a) * 0.7;
+                f.a += 0.01;
+                if (f.y > canvas.height) {
+                    snowflakes[i] = createSnowflake();
+                    snowflakes[i].y = 0;
+                }
             }
         }
-    }
-    function snowfallLoop() {
-        drawSnowflakes();
-        requestAnimationFrame(snowfallLoop);
-    }
-    // Init snowflakes
-    function initSnowflakes() {
-        snowflakes = [];
-        let flakeCount = Math.floor(canvas.width / 19) + 15;
-        for (let i = 0; i < flakeCount; i++) {
-            snowflakes.push(createSnowflake());
+        function snowfallLoop() {
+            drawSnowflakes();
+            requestAnimationFrame(snowfallLoop);
         }
-    }
-    window.addEventListener('resize', initSnowflakes);
-    initSnowflakes();
-    snowfallLoop();
+        // Init snowflakes
+        function initSnowflakes() {
+            snowflakes = [];
+            let flakeCount = Math.floor(canvas.width / 19) + 10;
+            for (let i = 0; i < flakeCount; i++) {
+                snowflakes.push(createSnowflake());
+            }
+        }
+        window.addEventListener('resize', initSnowflakes);
+        initSnowflakes();
+        snowfallLoop();
 
-    // Copy link function for new buttons
-    function copyLink(type) {
-        let link = "";
-        let tooltipEl = null;
-        if (type === "lockgold") {
-            link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
-            tooltipEl = document.getElementById("tooltip-lockgold");
-        } else if (type === "repojson") {
-            link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
-            tooltipEl = document.getElementById("tooltip-repojson");
+        // Copy link function for new buttons
+        function copyLink(type) {
+            let link = "";
+            let tooltipEl = null;
+            if (type === "lockgold") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
+                tooltipEl = document.getElementById("tooltip-lockgold");
+            } else if (type === "repojson") {
+                link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
+                tooltipEl = document.getElementById("tooltip-repojson");
+            }
+            if (link) {
+                navigator.clipboard.writeText(link).then(function() {
+                    if (tooltipEl) {
+                        tooltipEl.classList.add('show-tooltip');
+                        setTimeout(() => { tooltipEl.classList.remove('show-tooltip'); }, 1650);
+                    }
+                }, function() {
+                    if (tooltipEl) {
+                        tooltipEl.innerText = "Không thể copy";
+                        tooltipEl.classList.add('show-tooltip');
+                        setTimeout(() => {
+                            tooltipEl.innerText = "Đã copy!";
+                            tooltipEl.classList.remove('show-tooltip');
+                        }, 1650);
+                    }
+                });
+            }
         }
-        if (link) {
-            navigator.clipboard.writeText(link).then(function() {
-                if (tooltipEl) {
-                    tooltipEl.classList.add('show-tooltip');
-                    setTimeout(() => { tooltipEl.classList.remove('show-tooltip'); }, 1650);
-                }
-            }, function() {
-                if (tooltipEl) {
-                    tooltipEl.innerText = "Không thể copy";
-                    tooltipEl.classList.add('show-tooltip');
-                    setTimeout(() => { 
-                        tooltipEl.innerText = "Đã copy!";
-                        tooltipEl.classList.remove('show-tooltip'); 
-                    }, 1650);
-                }
-            });
-        }
-    }
     </script>
 </body>
 </html>
