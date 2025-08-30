@@ -63,16 +63,16 @@
         display: inline-block;
     }
         .showcase-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-            background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    font-family: 'Inter', sans-serif;
+    font-weight: 1200;
+    font-size: 2rem;
+    letter-spacing: 1px; /* Changed from 2px to 1px */
+    margin-bottom: 6px;
+    background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
         .showcase-desc {
             font-size: 1.07rem;
             color: #d3d6e1;
@@ -189,25 +189,6 @@
             margin-bottom: 8px;
             margin-top: 5px;
         }
-        
-        /* Corrected: CSS Grid for multi-column layout on small screens */
-        @media (max-width: 767px) {
-            .button-section {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-                justify-content: center;
-            }
-            .button-section.single-column {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
-            .button-section .redirect-button {
-                width: auto;
-            }
-        }
-        
         .button-section.centered-buttons .redirect-button,
         .redirect-button.centered-buttons {
             justify-content: center;
