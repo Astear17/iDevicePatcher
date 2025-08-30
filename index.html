@@ -94,7 +94,7 @@
         }
         .button-section {
             display: grid;
-            grid-template-columns: 1fr; /* Default: Single column for wider screens */
+            grid-template-columns: 1fr;
             gap: 20px;
             margin-top: 15px;
             margin-bottom: 15px;
@@ -212,6 +212,11 @@
                 width: auto;
             }
         }
+        
+        .button-section.centered-buttons .redirect-button {
+            justify-content: center;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -241,7 +246,7 @@
         
         <hr>
         <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
-        <div class="button-section">
+        <div class="button-section centered-buttons">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store
             </a>
@@ -272,7 +277,7 @@
         </div>
         <hr>
         <h3 class="button-header">TIPA/IPA cho TrollStore</h3>
-        <div class="button-section">
+        <div class="button-section centered-buttons">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
             </a>
