@@ -15,14 +15,15 @@
             font-weight: 700;
             background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
             min-height: 100vh;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             overflow-x: hidden;
             color: #f4f6fb;
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 80px;
+            padding-bottom: 80px;
         }
         .blur-bg {
             position: fixed;
@@ -38,8 +39,8 @@
             background: rgba(20, 24, 32, 0.6);
             border-radius: 24px;
             box-shadow: 0 10px 40px rgba(30,40,50,0.18);
-            padding: 32px 28px 24px 28px;
-            max-width: 430px;
+            padding: 32px 40px 24px 40px;
+            max-width: 550px;
             width: 95vw;
             z-index: 1;
             text-align: center;
@@ -91,20 +92,20 @@
             from {background: rgba(25,40,60,0.7);}
             to {background: rgba(75,20,60,0.5);}
         }
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .button-section {
+            display: grid;
+            grid-template-columns: 1fr; /* Default: Single column for wider screens */
+            gap: 20px;
             margin-top: 15px;
-            z-index: 2;
+            margin-bottom: 15px;
         }
         .redirect-button {
             display: flex;
             align-items: center;
             gap: 14px;
             justify-content: flex-start;
-            padding: 15px 24px;
-            font-size: 1.14rem;
+            padding: 20px 35px;
+            font-size: 1.2rem;
             font-weight: 600;
             border: none;
             border-radius: 12px;
@@ -176,6 +177,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             height: 0;
             margin: 18px 0;
+            width: 100%;
         }
         .button-header {
             color: #f2f3fa;
@@ -184,6 +186,31 @@
             text-align: left;
             margin-bottom: 8px;
             margin-top: 5px;
+        }
+        
+        /* Corrected: CSS Grid for multi-column layout on small screens */
+        @media (max-width: 767px) {
+            .button-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                justify-content: center;
+            }
+            .button-section.single-column {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .button-section .redirect-button {
+                width: auto;
+            }
+            .first-button-wrapper {
+                display: flex;
+                justify-content: center;
+            }
+            .first-button-wrapper .redirect-button {
+                width: auto;
+            }
         }
     </style>
 </head>
@@ -204,13 +231,17 @@
         <div class="showcase-highlight">
             <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
         </div>
-        <div class="button-container">
+        
+        <div class="first-button-wrapper">
             <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
                 <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
                 <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
             </button>
-            <hr>
-            <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
+        </div>
+        
+        <hr>
+        <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
+        <div class="button-section">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store
             </a>
@@ -232,14 +263,16 @@
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button sourcelink">
                 <i class="fa-solid fa-download"></i> YouTubeOLED v20.15.1 (YT Premium trá hình)
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button copylockgold">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.2.1.ipa" target="_blank" class="redirect-button copylockgold">
                 <i class="fa-solid fa-download"></i> YTMusicUltimate v7.21.1 (YT Music Premium trá hình)
             </a>
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button copyrepojson">
                 <i class="fa-solid fa-download"></i> ZSign iOS 15 - Ký & cài đặt app qua chứng chỉ
             </a>
-            <hr>
-            <h3 class="button-header">TIPA/IPA cho TrollStore</h3>
+        </div>
+        <hr>
+        <h3 class="button-header">TIPA/IPA cho TrollStore</h3>
+        <div class="button-section">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
             </a>
@@ -267,8 +300,10 @@
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button copyrepojson">
                 <i class="fa-solid fa-download"></i> TrollStore TAR v2.1 - TrollStore Việt Hoá, thêm nhiều tính năng hay
             </a>
-            <hr>
-            <h3 class="button-header">Extensions</h3>
+        </div>
+        <hr>
+        <h3 class="button-header">Extensions</h3>
+        <div class="button-section single-column">
             <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
                 <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
             </a>
@@ -281,14 +316,13 @@
             <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">
                 <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md" target="_blank" class="redirect-button sourcelink">
-                <i class="fa-solid fa-link"></i> Lấy URL tải cho TrollStore
-            </a>
             <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
                 <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
             </a>
-            <hr>
-            <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
+        </div>
+        <hr>
+        <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
+        <div class="button-section">
             <button class="redirect-button faq" onclick="copyLink('ytpremiumv2')" type="button">
                 <i class="fa-solid fa-copy"></i> Module YT Premium V2
                 <span class="copied-tooltip" id="tooltip-ytpremiumv2">Đã copy!</span>
