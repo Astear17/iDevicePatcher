@@ -9,59 +9,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', Segoe UI, sans-serif;
-            font-weight: 700;
-            background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
-            min-height: 100vh;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            overflow-x: hidden;
-            color: #f4f6fb;
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-        .blur-bg {
-            position: fixed;
-            top: -120px; left: -120px;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, #0ea5e9 60%, transparent 100%);
-            filter: blur(70px);
-            z-index: 0;
-            opacity: 0.25;
-            pointer-events: none;
-        }
-        .showcase-card {
-            background: rgba(20, 24, 32, 0.6);
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(30,40,50,0.18);
-            padding: 32px 40px 24px 40px;
-            max-width: 550px;
-            width: 95vw;
-            z-index: 1;
-            text-align: center;
-            backdrop-filter: blur(14px);
-            animation: pop-in 1s cubic-bezier(.4,2,.6,1.2);
-        }
-        @keyframes pop-in {
-            0% {transform: scale(0.9) translateY(60px); opacity: 0;}
-            100% {transform: scale(1) translateY(0); opacity: 1;}
-        }
-        .logo-img {
-            width: 4.35rem;
-            height: 4.35rem;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 8px;
-            border: 2px solid #38bdf8;
-            box-shadow: 0 2px 10px rgba(59,130,246,0.10);
-            background: #161b22;
-            display: inline-block;
-        }
+    body {
+        margin: 0;
+        font-family: 'Inter', Segoe UI, sans-serif;
+        font-weight: 700;
+        background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        color: #f4f6fb;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .blur-bg {
+        position: fixed;
+        top: -120px; left: -120px;
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, #0ea5e9 60%, transparent 100%);
+        filter: blur(70px);
+        z-index: 0;
+        opacity: 0.25;
+        pointer-events: none;
+    }
+    .showcase-card {
+        background: rgba(20, 24, 32, 0.6);
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(30,40,50,0.18);
+        padding: 32px 40px 24px 40px;
+        max-width: 550px;
+        width: 95vw;
+        z-index: 1;
+        text-align: center;
+        backdrop-filter: blur(14px);
+        animation: pop-in 1s cubic-bezier(.4,2,.6,1.2);
+    }
+    @keyframes pop-in {
+        0% {transform: scale(0.9) translateY(60px); opacity: 0;}
+        100% {transform: scale(1) translateY(0); opacity: 1;}
+    }
+    .logo-img {
+        width: 4.35rem;
+        height: 4.35rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        border: 2px solid #38bdf8;
+        box-shadow: 0 2px 10px rgba(59,130,246,0.10);
+        background: #161b22;
+        display: inline-block;
+    }
         .showcase-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
@@ -173,11 +173,13 @@
             opacity: 1 !important;
         }
         hr {
-            border: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            height: 0;
-            margin: 18px 0;
-            width: 100%;
+    border: none;
+    height: 1px;
+    margin: 18px 0;
+    width: 100%;
+    /* This new line applies the gradient. */
+    background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
+}
         }
         .button-header {
             color: #f2f3fa;
