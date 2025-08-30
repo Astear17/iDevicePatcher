@@ -92,30 +92,13 @@
             from {background: rgba(25,40,60,0.7);}
             to {background: rgba(75,20,60,0.5);}
         }
-        /* --- Multi-column Grid Styling --- */
-        .grid-container {
+        .button-section {
             display: grid;
-            gap: 20px; /* Space between grid items */
+            grid-template-columns: 1fr;
+            gap: 20px;
             margin-top: 15px;
             margin-bottom: 15px;
         }
-        /* Default to 1 column for small screens */
-        .grid-container {
-            grid-template-columns: 1fr;
-        }
-        /* 2 columns for medium screens */
-        @media (min-width: 480px) {
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax as needed */
-            }
-        }
-        /* 3 columns for large screens */
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust minmax as needed */
-            }
-        }
-        
         .redirect-button {
             display: flex;
             align-items: center;
@@ -135,8 +118,6 @@
             opacity: 0.97;
             background: linear-gradient(90deg,#2563ebCC 60%,#0ea5e9CC 100%);
             font-family: 'Inter', Segoe UI, sans-serif;
-            width: 100%; /* Ensure buttons fill their grid column */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
         .redirect-button i {
             font-size: 1.3em;
@@ -207,6 +188,24 @@
             margin-top: 5px;
         }
         
+        /* Corrected: CSS Grid for multi-column layout on small screens */
+        @media (max-width: 767px) {
+            .button-section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                justify-content: center;
+            }
+            .button-section.single-column {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+            .button-section .redirect-button {
+                width: auto;
+            }
+        }
+        
         .button-section.centered-buttons .redirect-button,
         .redirect-button.centered-buttons {
             justify-content: center;
@@ -258,7 +257,7 @@
         
         <hr>
         <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
-        <div class="grid-container">
+        <div class="button-section centered-buttons">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store
             </a>
@@ -289,7 +288,7 @@
         </div>
         <hr>
         <h3 class="button-header">TIPA/IPA cho TrollStore</h3>
-        <div class="grid-container">
+        <div class="button-section centered-buttons">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
             </a>
@@ -320,7 +319,7 @@
         </div>
         <hr>
         <h3 class="button-header">Extensions</h3>
-        <div class="grid-container">
+        <div class="button-section single-column">
             <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
                 <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
             </a>
@@ -339,7 +338,7 @@
         </div>
         <hr>
         <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
-        <div class="grid-container">
+        <div class="button-section">
             <button class="redirect-button faq" onclick="copyLink('ytpremiumv2')" type="button">
                 <i class="fa-solid fa-copy"></i> Module YT Premium V2
                 <span class="copied-tooltip" id="tooltip-ytpremiumv2">Đã copy!</span>
@@ -361,4 +360,136 @@
                 <span class="copied-tooltip" id="tooltip-vsco">Đã copy!</span>
             </button>
             <button class="redirect-button sourcelink" onclick="copyLink('vivacut')" type="button">
-                <i class="fa-solid fa-copy"></i>
+                <i class="fa-solid fa-copy"></i> Module Vivacut
+                <span class="copied-tooltip" id="tooltip-vivacut">Đã copy!</span>
+            </button>
+            <button class="redirect-button download" onclick="copyLink('soundcloudgo')" type="button">
+                <i class="fa-solid fa-copy"></i> Module SoundCloudGo
+                <span class="copied-tooltip" id="tooltip-soundcloudgo">Đã copy!</span>
+            </button>
+            <button class="redirect-button copylockgold" onclick="copyLink('alightmotion')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Alight Motion Premium
+                <span class="copied-tooltip" id="tooltip-alightmotion">Đã copy!</span>
+            </button>
+            <button class="redirect-button copyrepojson" onclick="copyLink('lockgold')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Locket Gold V6
+                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        // Canvas Snowfall, always active, covers nearly half screen
+        const canvas = document.getElementById('snowfall-canvas');
+        const ctx = canvas.getContext('2d');
+        let snowflakes = [];
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createSnowflake() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * -canvas.height,
+                r: Math.random() * 2.2 + 1.7,
+                d: Math.random() * 1.1 + 0.7,
+                a: Math.random() * Math.PI * 2
+            };
+        }
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255,255,255,0.95)';
+            ctx.beginPath();
+            for (let i = 0; i < snowflakes.length; i++) {
+                const f = snowflakes[i];
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+            }
+            ctx.fill();
+            moveSnowflakes();
+        }
+        function moveSnowflakes() {
+            for (let i = 0; i < snowflakes.length; i++) {
+                let f = snowflakes[i];
+                f.y += Math.pow(f.d, 2) + 0.45;
+                f.x += Math.sin(f.a) * 0.7;
+                f.a += 0.01;
+                if (f.y > canvas.height) {
+                    snowflakes[i] = createSnowflake();
+                    snowflakes[i].y = 0;
+                }
+            }
+        }
+        function snowfallLoop() {
+            drawSnowflakes();
+            requestAnimationFrame(snowfallLoop);
+        }
+        // Init snowflakes
+        function initSnowflakes() {
+            snowflakes = [];
+            let flakeCount = Math.floor(canvas.width / 19) + 10;
+            for (let i = 0; i < flakeCount; i++) {
+                snowflakes.push(createSnowflake());
+            }
+        }
+        window.addEventListener('resize', initSnowflakes);
+        initSnowflakes();
+        snowfallLoop();
+
+        // Copy link function for new buttons
+        function copyLink(type) {
+            let link = "";
+            let tooltipEl = null;
+            if (type === "repojson") {
+                link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
+                tooltipEl = document.getElementById("tooltip-repojson");
+            } else if (type === "ytpremiumv2") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremiumV2.module";
+                tooltipEl = document.getElementById("tooltip-ytpremiumv2");
+            } else if (type === "bilibili") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Bilibili-No-ADS/refs/heads/main/Bilibili%20No%20ADS";
+                tooltipEl = document.getElementById("tooltip-bilibili");
+            } else if (type === "spotify") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Spotify/refs/heads/main/SpotifyPre.module";
+                tooltipEl = document.getElementById("tooltip-spotify");
+            } else if (type === "picsart") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Picsart%20Premium.module";
+                tooltipEl = document.getElementById("tooltip-picsart");
+            } else if (type === "vsco") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/VSCO%20Premium.module";
+                tooltipEl = document.getElementById("tooltip-vsco");
+            } else if (type === "vivacut") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Vivacut.module";
+                tooltipEl = document.getElementById("tooltip-vivacut");
+            } else if (type === "soundcloudgo") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/SoundCloudPlus/refs/heads/main/soundcloudplus.module";
+                tooltipEl = document.getElementById("tooltip-soundcloudgo");
+            } else if (type === "alightmotion") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Alight%20Motion.module";
+                tooltipEl = document.getElementById("tooltip-alightmotion");
+            } else if (type === "lockgold") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
+                tooltipEl = document.getElementById("tooltip-lockgold");
+            }
+            if (link) {
+                navigator.clipboard.writeText(link).then(function() {
+                    if (tooltipEl) {
+                        tooltipEl.classList.add('show-tooltip');
+                        setTimeout(() => { tooltipEl.classList.remove('show-tooltip'); }, 1650);
+                    }
+                }, function() {
+                    if (tooltipEl) {
+                        tooltipEl.innerText = "Không thể copy";
+                        tooltipEl.classList.add('show-tooltip');
+                        setTimeout(() => {
+                            tooltipEl.innerText = "Đã copy!";
+                        }, 1650);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
