@@ -132,6 +132,8 @@
         .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1CC 80%,#2563ebCC 100%);}
         .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5eCC 60%,#fbbf24CC 100%);}
         .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123cCC 80%,#f59e42CC 100%);}
+        .redirect-button.download { background: linear-gradient(90deg,#14b8a6CC 60%,#22d3eeCC 100%);}
+        .redirect-button.download:hover { background: linear-gradient(90deg,#0d9488CC 80%,#0891b2CC 100%);}
         .redirect-button.copylockgold { background: linear-gradient(90deg,#fbbf24CC 60%,#f43f5eCC 100%);}
         .redirect-button.copylockgold:hover { background: linear-gradient(90deg,#eab308CC 80%,#be185dCC 100%);}
         .redirect-button.copyrepojson { background: linear-gradient(90deg,#22d3eeCC 60%,#2563ebCC 100%);}
@@ -202,7 +204,36 @@
             <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
         </div>
         <div class="button-container">
-            <h3 class="button-header">Extensions</h3>
+            <h3 class="button-header">IPA Download for Cert and TrollStore</h3>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Ha ban ung dung tren App Store
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> EeveeSpotify 9.0.68 (Spotify Premium)
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> Feather 1.3.1 iOS 15 - Ky chung chi
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> Locket Gold v2.8.0
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> Fake thong bao MBBank bien dong
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> BHTikTokPlus
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> YouTubeOLED Premium
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> YTMusicUltimate (YT Music Premium)
+            </a>
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button download">
+                <i class="fa-solid fa-download"></i> ZSign iOS 15 - Ky chung chi
+            </a>
+            <hr>
+            <h3 class="button-header">Liên kết chính</h3>
             <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
                 <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
             </a>
@@ -222,7 +253,7 @@
                 <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
             </a>
             <hr>
-            <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
+            <h3 class="button-header">Tiện ích & Công cụ</h3>
             <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
                 <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
                 <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
@@ -317,7 +348,6 @@
                         tooltipEl.classList.add('show-tooltip');
                         setTimeout(() => {
                             tooltipEl.innerText = "Đã copy!";
-                            tooltipEl.classList.remove('show-tooltip');
                         }, 1650);
                     }
                 });
