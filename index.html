@@ -204,18 +204,24 @@
             .button-section .redirect-button {
                 width: auto;
             }
-            .first-button-wrapper {
-                display: flex;
-                justify-content: center;
-            }
-            .first-button-wrapper .redirect-button {
-                width: auto;
-            }
         }
         
-        .button-section.centered-buttons .redirect-button {
+        .button-section.centered-buttons .redirect-button,
+        .redirect-button.centered-buttons {
             justify-content: center;
             text-align: center;
+        }
+
+        /* Styling for the AltStore button to make it full width */
+        .altstore-button-wrapper {
+            margin-top: 15px; /* Added margin for spacing */
+            margin-bottom: 15px; /* Added margin for spacing */
+            display: flex;
+            justify-content: center;
+            width: 100%; /* Ensure it takes full width */
+        }
+        .altstore-button-wrapper .redirect-button {
+            width: 100%; /* Make the button itself take full width of its container */
         }
     </style>
 </head>
@@ -237,8 +243,8 @@
             <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
         </div>
         
-        <div class="first-button-wrapper">
-            <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
+        <div class="altstore-button-wrapper">
+            <button class="redirect-button copyrepojson centered-buttons" onclick="copyLink('repojson')" type="button">
                 <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
                 <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
             </button>
