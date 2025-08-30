@@ -21,7 +21,7 @@
             justify-content: flex-start;
             overflow-x: hidden;
             color: #f4f6fb;
-            padding-top: 40px; /* New: Added padding to body instead of margin to card */
+            padding-top: 40px;
             padding-bottom: 40px;
         }
         .blur-bg {
@@ -205,32 +205,37 @@
             <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
         </div>
         <div class="button-container">
+            <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
+                <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
+                <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
+            </button>
+            <hr>
             <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa" target="_blank" class="redirect-button releases">
                 <i class="fa-solid fa-download"></i> EeveeSpotify 9.0.68 (Spotify Premium)
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa" target="_blank" class="redirect-button faq">
                 <i class="fa-solid fa-download"></i> Feather 1.3.1 iOS 15 - Ký & cài đặt app qua chứng chỉ
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa" target="_blank" class="redirect-button drive">
                 <i class="fa-solid fa-download"></i> Locket Gold v2.8.0 - Bật vpnify/proxy Mỹ để lên 15s
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa" target="_blank" class="redirect-button readme">
                 <i class="fa-solid fa-download"></i> Fake thông báo biến động số dư MBBank
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa" target="_blank" class="redirect-button tiktok">
                 <i class="fa-solid fa-download"></i> BHTikTokPlus, thêm nhiều tính năng hay cho TikTok
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button sourcelink">
                 <i class="fa-solid fa-download"></i> YouTubeOLED v20.15.1 (YT Premium trá hình)
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button copylockgold">
                 <i class="fa-solid fa-download"></i> YTMusicUltimate v7.21.1 (YT Music Premium trá hình)
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button copyrepojson">
                 <i class="fa-solid fa-download"></i> ZSign iOS 15 - Ký & cài đặt app qua chứng chỉ
             </a>
             <hr>
@@ -238,28 +243,28 @@
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/BypassRevokeDNS.mobileconfig" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/BypassRevokeDNS.mobileconfig" target="_blank" class="redirect-button releases">
                 <i class="fa-solid fa-download"></i> Profile BypassRevokeDNS
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/LocSim_1.3.7.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/LocSim_1.3.7.ipa" target="_blank" class="redirect-button faq">
                 <i class="fa-solid fa-download"></i> LocSim v1.3.7 - Fake vị trí định vị
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MDC0_v1.0_TrollStore.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MDC0_v1.0_TrollStore.ipa" target="_blank" class="redirect-button drive">
                 <i class="fa-solid fa-download"></i> MDC0 - Ẩn thanh dock, home bar,...
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_2.2.67_TrollStore.tipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_2.2.67_TrollStore.tipa" target="_blank" class="redirect-button readme">
                 <i class="fa-solid fa-download"></i> Shadowrocket TIPA v2.2.67
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollCleaner_TrollStore.tipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollCleaner_TrollStore.tipa" target="_blank" class="redirect-button tiktok">
                 <i class="fa-solid fa-download"></i> TrollCleaner - Dọn rác iPhone
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa" target="_blank" class="redirect-button sourcelink">
                 <i class="fa-solid fa-download"></i> TrollFools SLPEdition v3.7 - Tiêm dylib cho app
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_TrollStore.ipa" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_TrollStore.ipa" target="_blank" class="redirect-button copylockgold">
                 <i class="fa-solid fa-download"></i> TrollOpen v2.1 - Thanh bên để mở ứng dụng nhanh
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button download">
+            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button copyrepojson">
                 <i class="fa-solid fa-download"></i> TrollStore TAR v2.1 - TrollStore Việt Hoá, thêm nhiều tính năng hay
             </a>
             <hr>
@@ -284,13 +289,41 @@
             </a>
             <hr>
             <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
-            <button class="redirect-button copylockgold" onclick="copyLink('lockgold')" type="button">
-                <i class="fa-solid fa-copy"></i> Copy link module Locket Gold V6
-                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
+            <button class="redirect-button faq" onclick="copyLink('ytpremiumv2')" type="button">
+                <i class="fa-solid fa-copy"></i> Module YT Premium V2
+                <span class="copied-tooltip" id="tooltip-ytpremiumv2">Đã copy!</span>
             </button>
-            <button class="redirect-button copyrepojson" onclick="copyLink('repojson')" type="button">
-                <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
-                <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
+            <button class="redirect-button drive" onclick="copyLink('bilibili')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Bilibili Adblock
+                <span class="copied-tooltip" id="tooltip-bilibili">Đã copy!</span>
+            </button>
+            <button class="redirect-button releases" onclick="copyLink('spotify')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Spotify++
+                <span class="copied-tooltip" id="tooltip-spotify">Đã copy!</span>
+            </button>
+            <button class="redirect-button readme" onclick="copyLink('picsart')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Picsart Premium
+                <span class="copied-tooltip" id="tooltip-picsart">Đã copy!</span>
+            </button>
+            <button class="redirect-button tiktok" onclick="copyLink('vsco')" type="button">
+                <i class="fa-solid fa-copy"></i> Module VSCO Premium
+                <span class="copied-tooltip" id="tooltip-vsco">Đã copy!</span>
+            </button>
+            <button class="redirect-button sourcelink" onclick="copyLink('vivacut')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Vivacut
+                <span class="copied-tooltip" id="tooltip-vivacut">Đã copy!</span>
+            </button>
+            <button class="redirect-button download" onclick="copyLink('soundcloudgo')" type="button">
+                <i class="fa-solid fa-copy"></i> Module SoundCloudGo
+                <span class="copied-tooltip" id="tooltip-soundcloudgo">Đã copy!</span>
+            </button>
+            <button class="redirect-button copylockgold" onclick="copyLink('alightmotion')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Alight Motion Premium
+                <span class="copied-tooltip" id="tooltip-alightmotion">Đã copy!</span>
+            </button>
+            <button class="redirect-button copyrepojson" onclick="copyLink('lockgold')" type="button">
+                <i class="fa-solid fa-copy"></i> Module Locket Gold V6
+                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
             </button>
         </div>
     </div>
@@ -359,12 +392,36 @@
         function copyLink(type) {
             let link = "";
             let tooltipEl = null;
-            if (type === "lockgold") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
-                tooltipEl = document.getElementById("tooltip-lockgold");
-            } else if (type === "repojson") {
+            if (type === "repojson") {
                 link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
                 tooltipEl = document.getElementById("tooltip-repojson");
+            } else if (type === "ytpremiumv2") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremiumV2.module";
+                tooltipEl = document.getElementById("tooltip-ytpremiumv2");
+            } else if (type === "bilibili") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Bilibili-No-ADS/refs/heads/main/Bilibili%20No%20ADS";
+                tooltipEl = document.getElementById("tooltip-bilibili");
+            } else if (type === "spotify") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Spotify/refs/heads/main/SpotifyPre.module";
+                tooltipEl = document.getElementById("tooltip-spotify");
+            } else if (type === "picsart") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Picsart%20Premium.module";
+                tooltipEl = document.getElementById("tooltip-picsart");
+            } else if (type === "vsco") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/VSCO%20Premium.module";
+                tooltipEl = document.getElementById("tooltip-vsco");
+            } else if (type === "vivacut") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Vivacut.module";
+                tooltipEl = document.getElementById("tooltip-vivacut");
+            } else if (type === "soundcloudgo") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/SoundCloudPlus/refs/heads/main/soundcloudplus.module";
+                tooltipEl = document.getElementById("tooltip-soundcloudgo");
+            } else if (type === "alightmotion") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Alight%20Motion.module";
+                tooltipEl = document.getElementById("tooltip-alightmotion");
+            } else if (type === "lockgold") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
+                tooltipEl = document.getElementById("tooltip-lockgold");
             }
             if (link) {
                 navigator.clipboard.writeText(link).then(function() {
