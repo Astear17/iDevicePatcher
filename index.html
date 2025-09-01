@@ -65,7 +65,7 @@
         .showcase-title {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: 3rem; /* Changed from 2rem to 3rem */
+    font-size: 3rem; 
     letter-spacing: 1px;
     margin-bottom: 6px;
     background: linear-gradient(90deg, #38bdf8, #f43f5e 80%);
@@ -177,7 +177,6 @@
     height: 1px;
     margin: 18px 0;
     width: 100%;
-    /* This new line applies the gradient. */
     background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
 }
         }
@@ -195,16 +194,15 @@
             text-align: center;
         }
 
-        /* Styling for the AltStore button to make it full width */
         .altstore-button-wrapper {
-            margin-top: 15px; /* Added margin for spacing */
-            margin-bottom: 15px; /* Added margin for spacing */
+            margin-top: 15px; 
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
-            width: 100%; /* Ensure it takes full width */
+            width: 100%;
         }
         .altstore-button-wrapper .redirect-button {
-            width: 100%; /* Make the button itself take full width of its container */
+            width: 100%;
         }
     </style>
 </head>
@@ -270,7 +268,7 @@
             </a>
         </div>
         <hr>
-        <h3 class="button-header">TIPA/IPA cho TrollStore</h3>
+        <h3 class="button-header">Bấm để tải TIPA/IPA cho TrollStore</h3>
         <div class="button-section centered-buttons">
             <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
                 <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
@@ -316,11 +314,11 @@
                 <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
             </a>
             <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
-                <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17
+                <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17 (iDevPatcher)
             </a>
         </div>
         <hr>
-        <h3 class="button-header">Module Shadowrocket, nguồn AltStore</h3>
+        <h3 class="button-header">Module Shadowrocket, bấm để copy</h3>
         <div class="button-section">
             <button class="redirect-button faq" onclick="copyLink('ytpremiumv2')" type="button">
                 <i class="fa-solid fa-copy"></i> Module YT Premium V2
@@ -361,7 +359,6 @@
         </div>
     </div>
     <script>
-        // Canvas Snowfall, always active, covers nearly half screen
         const canvas = document.getElementById('snowfall-canvas');
         const ctx = canvas.getContext('2d');
         let snowflakes = [];
