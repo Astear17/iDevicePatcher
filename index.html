@@ -140,6 +140,8 @@
         .redirect-button.copylockgold:hover { background: linear-gradient(90deg,#eab308CC 80%,#be185dCC 100%);}
         .redirect-button.copyrepojson { background: linear-gradient(90deg,#22d3eeCC 60%,#2563ebCC 100%);}
         .redirect-button.copyrepojson:hover { background: linear-gradient(90deg,#0e7490CC 80%,#1e40afCC 100%);}
+        .redirect-button.random1 { background: linear-gradient(90deg,#53a834CC 60%,#85f442CC 100%);}
+        .redirect-button.random1:hover { background: linear-gradient(90deg,#2a7f0cCC 80%,#62c929CC 100%);}
         .redirect-button:hover {
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 6px 22px rgba(59,130,246,0.18);
@@ -236,9 +238,9 @@
             </a>
         </div>
         <div class="altstore-button-wrapper">
- <a href="https://nightmarket.site/huong-dan-locket" target="_blank" class="redirect-button copylockgold centered-buttons">
+<a href="https://nightmarket.site/huong-dan-locket" target="_blank" class="redirect-button copylockgold centered-buttons">
 <i class="fa-solid fa-wand-magic-sparkles"></i> HD up Locket Gold & 15s qua Shadowrocket
- </a>
+</a>
 </div>
         <hr>
         <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
@@ -363,6 +365,10 @@
                 <i class="fa-solid fa-copy"></i> Module Locket Gold V6
                 <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
             </button>
+            <button class="redirect-button random1" onclick="copyLink('aio')" type="button">
+                <i class="fa-solid fa-copy"></i> Module AIO (Locket, Spotify, YouTube)
+                <span class="copied-tooltip" id="tooltip-aio">Đã copy!</span>
+            </button>
         </div>
     </div>
     <script>
@@ -454,8 +460,11 @@
                 link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Alight%20Motion.module";
                 tooltipEl = document.getElementById("tooltip-alightmotion");
             } else if (type === "lockgold") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/LocketGoldV6.module";
+                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locketgold-V7.module";
                 tooltipEl = document.getElementById("tooltip-lockgold");
+            } else if (type === "aio") {
+                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/All-In-One%20-Nightmarket";
+                tooltipEl = document.getElementById("tooltip-aio");
             }
             if (link) {
                 navigator.clipboard.writeText(link).then(function() {
