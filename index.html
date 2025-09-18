@@ -2,159 +2,229 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>iDevicePatcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-    body {
-        margin: 0;
-        font-family: 'Inter', Segoe UI, sans-serif;
-        font-weight: 700;
-        background: linear-gradient(135deg, #10151c 0%, #232a36 100%);
-        min-height: 100vh;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        overflow-x: hidden;
-        color: #f4f6fb;
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-    .blur-bg {
-        position: fixed;
-        top: -120px; left: -120px;
-        width: 400px; height: 400px;
-        background: radial-gradient(circle, #0ea5e9 60%, transparent 100%);
-        filter: blur(70px);
-        z-index: 0;
-        opacity: 0.25;
-        pointer-events: none;
-    }
-    .showcase-card {
-        background: rgba(20, 24, 32, 0.6);
-        border-radius: 24px;
-        box-shadow: 0 10px 40px rgba(30,40,50,0.18);
-        padding: 32px 40px 24px 40px;
-        max-width: 700px;
-        width: 95vw;
-        z-index: 1;
-        text-align: center;
-        backdrop-filter: blur(14px);
-        animation: pop-in 1s cubic-bezier(.4,2,.6,1.2);
-    }
-    @keyframes pop-in {
-        0% {transform: scale(0.9) translateY(60px); opacity: 0;}
-        100% {transform: scale(1) translateY(0); opacity: 1;}
-    }
-    .logo-img {
-        width: 4.35rem;
-        height: 4.35rem;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 8px;
-        border: 2px solid #38bdf8;
-        box-shadow: 0 2px 10px rgba(59,130,246,0.10);
-        background: #161b22;
-        display: inline-block;
-    }
-        .showcase-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 3rem; 
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    background: linear-gradient(90deg, #38bdf8, #f43f5e 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-        .showcase-desc {
-            font-size: 1.07rem;
-            color: #d3d6e1;
-            margin-bottom: 18px;
+        :root {
+            --bg-color: #10151c;
+            --card-bg: #1e1e24;
+            --text-color: #d4d4dc;
+            --heading-color: #f0f0f5;
+            --accent-color: #8a2be2; /* Purple for the glow */
+            --border-color: #33333e;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+            --gradient-title: linear-gradient(90deg, #38bdf8, #f43f5e 80%);
         }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        .blur-bg {
+            position: fixed;
+            top: -120px; left: -120px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, #0ea5e9 60%, transparent 100%);
+            filter: blur(70px);
+            z-index: 0;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .snowfall-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .showcase-card {
+            background: rgba(20, 24, 32, 0.6);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(30,40,50,0.18);
+            padding: 32px 40px 24px 40px;
+            width: 100%;
+            z-index: 1;
+            backdrop-filter: blur(14px);
+            animation: pop-in-initial 1s cubic-bezier(.4,2,.6,1.2);
+            box-sizing: border-box;
+        }
+
+        @keyframes pop-in-initial {
+            0% {transform: scale(0.9) translateY(60px); opacity: 0;}
+            100% {transform: scale(1) translateY(0); opacity: 1;}
+        }
+
+        .logo-img {
+            width: 4.35rem;
+            height: 4.35rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
+            background: #161b22;
+        }
+
+        .showcase-title {
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+            background: var(--gradient-title);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .showcase-desc {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
         .showcase-highlight {
-            font-size: 1.15rem;
-            background: rgba(25,40,60,0.7);
+            font-weight: 500;
+            font-size: 1.1rem;
+            background: rgba(25, 40, 60, 0.7);
             border-left: 4px solid #3b82f6;
             padding: 12px 14px;
             border-radius: 7px;
-            margin-bottom: 20px;
+            margin: 25px auto;
             color: #f5faff;
             animation: highlight-fade 3s linear infinite alternate;
+            text-align: center;
         }
+
         @keyframes highlight-fade {
-            from {background: rgba(25,40,60,0.7);}
-            to {background: rgba(75,20,60,0.5);}
+            from { background: rgba(25, 40, 60, 0.7); }
+            to { background: rgba(75, 20, 60, 0.5); }
         }
+        
+        .top-buttons {
+            display: grid;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .card-header {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
         .button-section {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            gap: 15px;
         }
-        .redirect-button {
+        
+        .modules-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .redirect-button, .copy-button {
             display: flex;
             align-items: center;
             gap: 14px;
-            justify-content: flex-start;
-            padding: 20px 45px;
-            font-size: 1.2rem;
+            padding: 18px 25px;
+            font-size: 1.1rem;
             font-weight: 600;
             border: none;
             border-radius: 12px;
             cursor: pointer;
-            transition: background 0.22s, box-shadow 0.22s, transform 0.18s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
-            color: #f2f3fa;
-            box-shadow: 0 2px 12px rgba(59,130,246,0.08);
+            color: #f2f3fa !important;
             position: relative;
-            opacity: 0.97;
-            background: linear-gradient(90deg,#2563ebCC 60%,#0ea5e9CC 100%);
-            font-family: 'Inter', Segoe UI, sans-serif;
+            text-align: left;
+            justify-content: center; /* Default to center */
         }
-        .redirect-button i {
-            font-size: 1.3em;
+
+        .button-section.align-left .redirect-button,
+        .button-section.align-left .copy-button {
+            justify-content: flex-start; /* Override for specific sections */
         }
-        .redirect-button.drive    { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
-        .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3cCC 80%,#2962c9CC 100%);}
-        .redirect-button.faq      { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
-        .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3CC 70%,#0284c7CC 100%);}
-        .redirect-button.releases { background: linear-gradient(90deg,#f59e42CC 60%,#f43f5eCC 100%);}
-        .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706CC 70%,#be185dCC 100%);}
-        .redirect-button.readme  { background: linear-gradient(90deg,#ff3b3bCC 70%,#ff7e5fCC 100%);}
-        .redirect-button.readme:hover { background: linear-gradient(90deg,#b91c1cCC 80%,#f87171CC 100%);}
-        .redirect-button.sourcelink { background: linear-gradient(90deg,#38bdf8CC 60%,#3b82f6CC 100%);}
-        .redirect-button.sourcelink:hover { background: linear-gradient(90deg,#0369a1CC 80%,#2563ebCC 100%);}
-        .redirect-button.tiktok  { background: linear-gradient(90deg,#f43f5eCC 60%,#fbbf24CC 100%);}
-        .redirect-button.tiktok:hover { background: linear-gradient(90deg,#be123cCC 80%,#f59e42CC 100%);}
-        .redirect-button.download { background: linear-gradient(90deg,#14b8a6CC 60%,#22d3eeCC 100%);}
-        .redirect-button.download:hover { background: linear-gradient(90deg,#0d9488CC 80%,#0891b2CC 100%);}
-        .redirect-button.copylockgold { background: linear-gradient(90deg,#fbbf24CC 60%,#f43f5eCC 100%);}
-        .redirect-button.copylockgold:hover { background: linear-gradient(90deg,#eab308CC 80%,#be185dCC 100%);}
-        .redirect-button.copyrepojson { background: linear-gradient(90deg,#22d3eeCC 60%,#2563ebCC 100%);}
-        .redirect-button.copyrepojson:hover { background: linear-gradient(90deg,#0e7490CC 80%,#1e40afCC 100%);}
-        .redirect-button.random1 { background: linear-gradient(90deg,#53a834CC 60%,#85f442CC 100%);}
-        .redirect-button.random1:hover { background: linear-gradient(90deg,#2a7f0cCC 80%,#62c929CC 100%);}
-        .redirect-button:hover {
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 6px 22px rgba(59,130,246,0.18);
+        
+        .redirect-button i, .copy-button i {
+            font-size: 1.1em;
+            width: 20px;
+            text-align: center;
         }
-        .snowfall-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 11;
-            display: block;
+        
+        .redirect-button:hover, .copy-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+
+        /* Button Colors */
+        .color-drive    { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
+        .color-faq      { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
+        .color-releases { background: linear-gradient(90deg,#f59e42CC 60%,#f43f5eCC 100%);}
+        .color-readme   { background: linear-gradient(90deg,#ff3b3bCC 70%,#ff7e5fCC 100%);}
+        .color-sourcelink{ background: linear-gradient(90deg,#38bdf8CC 60%,#3b82f6CC 100%);}
+        .color-tiktok   { background: linear-gradient(90deg,#f43f5eCC 60%,#fbbf24CC 100%);}
+        .color-download { background: linear-gradient(90deg,#14b8a6CC 60%,#22d3eeCC 100%);}
+        .color-copylockgold { background: linear-gradient(90deg,#fbbf24CC 60%,#f43f5eCC 100%);}
+        .color-copyrepojson { background: linear-gradient(90deg,#22d3eeCC 60%,#2563ebCC 100%);}
+        .color-random1  { background: linear-gradient(90deg,#53a834CC 60%,#85f442CC 100%);}
+        .color-blue     { background: linear-gradient(90deg,#005c99CC 60%,#3399ffCC 100%); }
+
         .copied-tooltip {
             position: absolute;
             right: 18px;
@@ -164,240 +234,153 @@
             color: #fff;
             padding: 3px 12px;
             border-radius: 7px;
-            font-size: 0.93em;
+            font-size: 0.9em;
             font-weight: 600;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.18s;
             z-index: 20;
         }
+
         .show-tooltip {
             opacity: 1 !important;
         }
-        hr {
+        
+        .footer-sep {
             border: none;
             height: 1px;
-            margin: 18px 0;
+            margin: 25px 0;
             width: 100%;
-            background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
-            opacity: 0.8;
+            background: linear-gradient(90deg, #5a4a4a, #3a2a2a 80%);
+            opacity: 0.6;
         }
-        .button-header {
-            color: #f2f3fa;
-            font-size: 1.15rem;
-            font-weight: 700;
-            text-align: left;
-            margin-bottom: 8px;
-            margin-top: 5px;
-        }
-        .button-section.centered-buttons .redirect-button,
-        .redirect-button.centered-buttons {
-            justify-content: center;
-            text-align: center;
+        
+        .footer-button-wrapper {
+            margin-bottom: 20px;
         }
 
-        .altstore-button-wrapper {
-            margin-top: 15px; 
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        .altstore-button-wrapper .redirect-button {
-            width: 100%;
-        }
-        .color-blue { background: linear-gradient(90deg,#005c99CC 60%,#3399ffCC 100%); }
-        .color-blue:hover { background: linear-gradient(90deg,#003366CC 70%,#0066ffCC 100%); }
         .centered-text {
             text-align: center;
             opacity: 0.8;
             font-size: 0.9em;
             margin-top: 20px;
         }
+
     </style>
 </head>
 <body>
     <div class="blur-bg"></div>
     <canvas class="snowfall-canvas" id="snowfall-canvas"></canvas>
-    <div class="showcase-card">
-        <img
-            src="https://github.com/Astear17/iDevicePatcher/raw/main/Untitled28_20250826191037.png"
-            alt="Logo"
-            class="logo-img"
-        >
-        <div class="showcase-title">iDevicePatcher</div>
-        <div class="showcase-desc">
-            Nơi tổng hợp IPA mình đã up trên TikTok <b>@hyper_astear.17</b>.<br>
-            Paste link vào TrollStore để tải, không cần tải file Drive!
-        </div>
-        <div class="showcase-highlight">
-            <span><i class="fa-solid fa-fire"></i> Thông báo: <b>Releases 2.0</b> đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ repo AltStore (ESign, Ksign, Feather, GBox, Zsign,...)</span>
-        </div>
-        
-        <div class="altstore-button-wrapper">
-            <button class="redirect-button copyrepojson centered-buttons" onclick="copyLink('repojson')" type="button">
-                <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
-                <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
-            </button>
-        </div>
-        <div class="altstore-button-wrapper">
-            <a href="https://nightmarket.site/modules" target="_blank" class="redirect-button faq centered-buttons">
-                <i class="fa-solid fa-link"></i> Module Shadowrocket - Night Market
-            </a>
-        </div>
-        <div class="altstore-button-wrapper">
-<a href="https://nightmarket.site/huong-dan-locket" target="_blank" class="redirect-button copylockgold centered-buttons">
-<i class="fa-solid fa-wand-magic-sparkles"></i> HD up Locket Gold & 15s qua Shadowrocket
-</a>
-</div>
-        <hr>
-        <h3 class="button-header">Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
-        <div class="button-section centered-buttons">
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button download">
-                <i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Chrome_125.6422.145_iOS-15.ipa" target="_blank" class="redirect-button drive">
-<i class="fa-solid fa-download"></i> Google Chrome iOS 15 IPA
-</a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa" target="_blank" class="redirect-button releases">
-                <i class="fa-solid fa-download"></i> EeveeSpotify 9.0.68 (Spotify Premium)
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa" target="_blank" class="redirect-button faq">
-                <i class="fa-solid fa-download"></i> Feather 1.3.1 iOS 15 - Ký & cài đặt app qua chứng chỉ
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa" target="_blank" class="redirect-button drive">
-                <i class="fa-solid fa-download"></i> Locket Gold v2.8.0 - Bật vpnify/proxy Mỹ để lên 15s
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa" target="_blank" class="redirect-button readme">
-                <i class="fa-solid fa-download"></i> Fake thông báo biến động số dư MBBank
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa" target="_blank" class="redirect-button tiktok">
-                <i class="fa-solid fa-download"></i> BHTikTokPlus, thêm nhiều tính năng hay cho TikTok
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button sourcelink">
-                <i class="fa-solid fa-download"></i> YouTubeOLED v20.15.1 (YT Premium trá hình)
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button copylockgold">
-                <i class="fa-solid fa-download"></i> YTMusicUltimate v7.21.1 (YT Music Premium trá hình)
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button copyrepojson">
-                <i class="fa-solid fa-download"></i> ZSign iOS 15 - Ký & cài đặt app qua chứng chỉ
-            </a>
-        </div>
-        <hr>
-        <h3 class="button-header">Bấm để cài TIPA/IPA cho TrollStore (phải bật sẵn dòng URL Scheme Enabled trong cài đặt của TrollStore</h3>
-        <div class="button-section centered-buttons">
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button download">
-                <i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/BypassRevokeDNS.mobileconfig" target="_blank" class="redirect-button releases">
-                <i class="fa-solid fa-download"></i> Profile BypassRevokeDNS
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/LocSim_1.3.7.ipa" target="_blank" class="redirect-button faq">
-                <i class="fa-solid fa-download"></i> LocSim v1.3.7 - Fake vị trí định vị
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MDC0_v1.0_TrollStore.ipa" target="_blank" class="redirect-button drive">
-                <i class="fa-solid fa-download"></i> MDC0 - Ẩn thanh dock, home bar,...
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_2.2.67_TrollStore.tipa" target="_blank" class="redirect-button readme">
-                <i class="fa-solid fa-download"></i> Shadowrocket TIPA v2.2.67
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollCleaner_TrollStore.tipa" target="_blank" class="redirect-button tiktok">
-                <i class="fa-solid fa-download"></i> TrollCleaner - Dọn rác iPhone
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa" target="_blank" class="redirect-button sourcelink">
-                <i class="fa-solid fa-download"></i> TrollFools SLPEdition v3.7 - Tiêm dylib cho app
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_TrollStore.ipa" target="_blank" class="redirect-button copylockgold">
-                <i class="fa-solid fa-download"></i> TrollOpen v2.1 - Thanh bên để mở ứng dụng nhanh
-            </a>
-            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button copyrepojson">
-                <i class="fa-solid fa-download"></i> TrollStore TAR v2.1 - TrollStore Việt Hoá, thêm nhiều tính năng hay
-            </a>
-        </div>
-        <hr>
-        <h3 class="button-header">Extensions</h3>
-        <div class="button-section single-column">
-            <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button drive">
-                <i class="fa-brands fa-google-drive"></i> Link drive tổng hợp icon Locket
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button faq">
-                <i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button releases">
-                <i class="fa-solid fa-download"></i> Releases (Tải IPA/TIPA thủ công ở đây)
-            </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button readme">
-                <i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher
-            </a>
-            <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button tiktok">
-                <i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17 (iDevPatcher)
-            </a>
-        </div>
-        <hr>
-        <h3 class="button-header">Module Shadowrocket, bấm để copy</h3>
-        <div class="button-section">
-            <button class="redirect-button faq" onclick="copyLink('ytpremiumv2')" type="button">
-                <i class="fa-solid fa-copy"></i> Module YT Premium V2
-                <span class="copied-tooltip" id="tooltip-ytpremiumv2">Đã copy!</span>
-            </button>
-            <button class="redirect-button drive" onclick="copyLink('bilibili')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Bilibili Adblock
-                <span class="copied-tooltip" id="tooltip-bilibili">Đã copy!</span>
-            </button>
-            <button class="redirect-button releases" onclick="copyLink('spotify')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Spotify++
-                <span class="copied-tooltip" id="tooltip-spotify">Đã copy!</span>
-            </button>
-            <button class="redirect-button readme" onclick="copyLink('picsart')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Picsart Premium
-                <span class="copied-tooltip" id="tooltip-picsart">Đã copy!</span>
-            </button>
-            <button class="redirect-button tiktok" onclick="copyLink('vsco')" type="button">
-                <i class="fa-solid fa-copy"></i> Module VSCO Premium
-                <span class="copied-tooltip" id="tooltip-vsco">Đã copy!</span>
-            </button>
-            <button class="redirect-button sourcelink" onclick="copyLink('vivacut')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Vivacut
-                <span class="copied-tooltip" id="tooltip-vivacut">Đã copy!</span>
-            </button>
-            <button class="redirect-button download" onclick="copyLink('soundcloudgo')" type="button">
-                <i class="fa-solid fa-copy"></i> Module SoundCloudGo
-                <span class="copied-tooltip" id="tooltip-soundcloudgo">Đã copy!</span>
-            </button>
-            <button class="redirect-button copylockgold" onclick="copyLink('alightmotion')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Alight Motion Premium
-                <span class="copied-tooltip" id="tooltip-alightmotion">Đã copy!</span>
-            </button>
-            <button class="redirect-button copyrepojson" onclick="copyLink('lockgold')" type="button">
-                <i class="fa-solid fa-copy"></i> Module Locket Gold V7
-                <span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span>
-            </button>
-            <button class="redirect-button random1" onclick="copyLink('aio')" type="button">
-                <i class="fa-solid fa-copy"></i> Module AIO (Locket, Spotify, YouTube)
-                <span class="copied-tooltip" id="tooltip-aio">Đã copy!</span>
-            </button>
-        </div>
-        <hr>
-        <div class="button-section">
-            <a href="https://astear17.github.io" target="_blank" class="redirect-button color-blue centered-buttons">
-                <i class="fa-solid fa-user"></i> Astear17 - Personal site
-            </a>
-        </div>
-        <div class="centered-text">
-            Deploy and summarized by Astear17
+
+    <div class="container">
+        <div class="showcase-card">
+            <header class="main-header">
+                <img src="https://github.com/Astear17/iDevicePatcher/raw/main/Untitled28_20250826191037.png" alt="Logo" class="logo-img">
+                <h1 class="showcase-title">iDevicePatcher</h1>
+                <p class="showcase-desc">
+                    Nơi tổng hợp IPA mình đã up trên TikTok <b>@hyper_astear.17</b>.<br>
+                    Paste link vào TrollStore để tải, không cần tải file Drive!
+                </p>
+                <div class="showcase-highlight">
+                    <span><i class="fa-solid fa-fire"></i> <b>Thông báo:</b> Đã update thêm Zsign!<br>Thêm repo AltStore của iDevPatch vào bất kỳ ứng dụng hỗ trợ.</span>
+                </div>
+            </header>
+            
+            <div class="top-buttons">
+                <button class="copy-button color-copyrepojson" onclick="copyLink(event, this)" data-link-id="repojson">
+                    <i class="fa-solid fa-clipboard"></i> Copy link repo AltStore
+                    <span class="copied-tooltip" id="tooltip-repojson">Đã copy!</span>
+                </button>
+                <a href="https://nightmarket.site/modules" target="_blank" class="redirect-button color-faq">
+                    <i class="fa-solid fa-link"></i> Module Shadowrocket - Night Market
+                </a>
+                <a href="https://nightmarket.site/huong-dan-locket" target="_blank" class="redirect-button color-copylockgold">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> HD up Locket Gold & 15s
+                </a>
+            </div>
+            
+            <main class="card-container">
+                <div class="card">
+                    <h3 class="card-header"><i class="fa-solid fa-cloud-arrow-down"></i> Bấm để tải file IPA cho chứng chỉ/TrollStore</h3>
+                    <div class="button-section">
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa" target="_blank" class="redirect-button color-download"><i class="fa-solid fa-download"></i> DLiPA 1.0.0 - Hạ bản ứng dụng trên App Store</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Chrome_125.6422.145_iOS-15.ipa" target="_blank" class="redirect-button color-drive"><i class="fa-solid fa-download"></i> Google Chrome iOS 15 IPA</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa" target="_blank" class="redirect-button color-releases"><i class="fa-solid fa-download"></i> EeveeSpotify 9.0.68 (Spotify Premium)</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa" target="_blank" class="redirect-button color-faq"><i class="fa-solid fa-download"></i> Feather 1.3.1 iOS 15 - Ký & cài đặt app qua chứng chỉ</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa" target="_blank" class="redirect-button color-drive"><i class="fa-solid fa-download"></i> Locket Gold v2.8.0 - Bật vpnify/proxy Mỹ để lên 15s</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa" target="_blank" class="redirect-button color-readme"><i class="fa-solid fa-download"></i> Fake thông báo biến động số dư MBBank</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa" target="_blank" class="redirect-button color-tiktok"><i class="fa-solid fa-download"></i> BHTikTokPlus, thêm nhiều tính năng hay cho TikTok</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa" target="_blank" class="redirect-button color-sourcelink"><i class="fa-solid fa-download"></i> YouTubeOLED v20.15.1 (YT Premium trá hình)</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa" target="_blank" class="redirect-button color-copylockgold"><i class="fa-solid fa-download"></i> YTMusicUltimate v7.21.1 (YT Music Premium trá hình)</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8.ipa" target="_blank" class="redirect-button color-copyrepojson"><i class="fa-solid fa-download"></i> ZSign iOS 15 - Ký & cài đặt app qua chứng chỉ</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-header"><i class="fa-solid fa-bolt"></i> Bấm để cài TIPA/IPA cho TrollStore (phải bật sẵn dòng URL Scheme Enabled trong cài đặt của TrollStore</h3>
+                    <div class="button-section">
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/AppStore++_TrollStore_v1.0.3-2.ipa" target="_blank" class="redirect-button color-download"><i class="fa-solid fa-download"></i> AppStore++ v1.0.3 (Hạ bản ứng dụng trên App Store)</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/BypassRevokeDNS.mobileconfig" target="_blank" class="redirect-button color-releases"><i class="fa-solid fa-download"></i> Profile BypassRevokeDNS</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/LocSim_1.3.7.ipa" target="_blank" class="redirect-button color-faq"><i class="fa-solid fa-download"></i> LocSim v1.3.7 - Fake vị trí định vị</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MDC0_v1.0_TrollStore.ipa" target="_blank" class="redirect-button color-drive"><i class="fa-solid fa-download"></i> MDC0 - Ẩn dock, home bar,...</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_2.2.67_TrollStore.tipa" target="_blank" class="redirect-button color-readme"><i class="fa-solid fa-download"></i> Shadowrocket TIPA v2.2.67</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollCleaner_TrollStore.tipa" target="_blank" class="redirect-button color-tiktok"><i class="fa-solid fa-download"></i> TrollCleaner - Dọn rác iPhone</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollFools_SLPEdition_v3.7-1.2_TrollStore.ipa" target="_blank" class="redirect-button color-sourcelink"><i class="fa-solid fa-download"></i> TrollFools SLPEdition v3.7 - Tiêm dylib cho app</a>
+                        <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_TrollStore.ipa" target="_blank" class="redirect-button color-copylockgold"><i class="fa-solid fa-download"></i> TrollOpen v2.1 - Thanh bên để mở ứng dụng nhanh</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button color-copyrepojson"><i class="fa-solid fa-download"></i> TrollStore TAR v2.1 - Việt Hoá, thêm nhiều tính năng hay</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-header"><i class="fa-solid fa-copy"></i> Copy Module Shadowrocket</h3>
+                    <div class="button-section modules-grid align-left">
+                        <button class="copy-button color-faq" onclick="copyLink(event, this)" data-link-id="ytpremiumv2"><i class="fa-solid fa-copy"></i> Module YT Premium V2<span class="copied-tooltip" id="tooltip-ytpremiumv2">Đã copy!</span></button>
+                        <button class="copy-button color-drive" onclick="copyLink(event, this)" data-link-id="bilibili"><i class="fa-solid fa-copy"></i> Module Bilibili Adblock<span class="copied-tooltip" id="tooltip-bilibili">Đã copy!</span></button>
+                        <button class="copy-button color-releases" onclick="copyLink(event, this)" data-link-id="spotify"><i class="fa-solid fa-copy"></i> Module Spotify++<span class="copied-tooltip" id="tooltip-spotify">Đã copy!</span></button>
+                        <button class="copy-button color-readme" onclick="copyLink(event, this)" data-link-id="picsart"><i class="fa-solid fa-copy"></i> Module Picsart Premium<span class="copied-tooltip" id="tooltip-picsart">Đã copy!</span></button>
+                        <button class="copy-button color-tiktok" onclick="copyLink(event, this)" data-link-id="vsco"><i class="fa-solid fa-copy"></i> Module VSCO Premium<span class="copied-tooltip" id="tooltip-vsco">Đã copy!</span></button>
+                        <button class="copy-button color-sourcelink" onclick="copyLink(event, this)" data-link-id="vivacut"><i class="fa-solid fa-copy"></i> Module Vivacut<span class="copied-tooltip" id="tooltip-vivacut">Đã copy!</span></button>
+                        <button class="copy-button color-download" onclick="copyLink(event, this)" data-link-id="soundcloudgo"><i class="fa-solid fa-copy"></i> Module SoundCloudGo<span class="copied-tooltip" id="tooltip-soundcloudgo">Đã copy!</span></button>
+                        <button class="copy-button color-copylockgold" onclick="copyLink(event, this)" data-link-id="alightmotion"><i class="fa-solid fa-copy"></i> Module Alight Motion Premium<span class="copied-tooltip" id="tooltip-alightmotion">Đã copy!</span></button>
+                        <button class="copy-button color-copyrepojson" onclick="copyLink(event, this)" data-link-id="lockgold"><i class="fa-solid fa-copy"></i> Module Locket Gold V7<span class="copied-tooltip" id="tooltip-lockgold">Đã copy!</span></button>
+                        <button class="copy-button color-random1" onclick="copyLink(event, this)" data-link-id="aio"><i class="fa-solid fa-copy"></i> Module AIO (Locket, Spotify, YouTube)<span class="copied-tooltip" id="tooltip-aio">Đã copy!</span></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-header"><i class="fa-solid fa-plug"></i> Extensions</h3>
+                    <div class="button-section align-left">
+                        <a href="https://drive.google.com/drive/folders/1uIx2fes2YpUYe6KTXm3qvSF1UqmQPy7e?usp=sharing" target="_blank" class="redirect-button color-drive"><i class="fa-brands fa-google-drive"></i> Drive tổng hợp icon Locket</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/blob/main/faq.md" target="_blank" class="redirect-button color-faq"><i class="fa-solid fa-circle-question"></i> FAQ (Câu hỏi thường gặp)</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/releases/tag/2.0" target="_blank" class="redirect-button color-releases"><i class="fa-solid fa-download"></i> Releases (Tải thủ công)</a>
+                        <a href="https://github.com/Astear17/iDevicePatcher/blob/main/README.md" target="_blank" class="redirect-button color-readme"><i class="fa-solid fa-info-circle"></i> Giới thiệu về iDevPatcher</a>
+                        <a href="https://www.tiktok.com/@hyper_astear.17" target="_blank" class="redirect-button color-tiktok"><i class="fa-brands fa-tiktok"></i> TikTok: @hyper_astear.17</a>
+                    </div>
+                </div>
+            </main>
+
+            <hr class="footer-sep">
+            <div class="footer-button-wrapper">
+                 <a href="https://astear17.github.io" target="_blank" class="redirect-button color-blue"><i class="fa-solid fa-user"></i> Astear17 - Personal site</a>
+            </div>
+            
+            <footer class="centered-text">
+                Deploy and summarized by Astear17
+            </footer>
         </div>
     </div>
+    
     <script>
+        // Scripts remain the same as previous version
         const canvas = document.getElementById('snowfall-canvas');
         const ctx = canvas.getContext('2d');
         let snowflakes = [];
+        
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        
         function createSnowflake() {
             return {
                 x: Math.random() * canvas.width,
@@ -407,6 +390,7 @@
                 a: Math.random() * Math.PI * 2
             };
         }
+
         function drawSnowflakes() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'rgba(255,255,255,0.95)';
@@ -419,6 +403,7 @@
             ctx.fill();
             moveSnowflakes();
         }
+
         function moveSnowflakes() {
             for (let i = 0; i < snowflakes.length; i++) {
                 let f = snowflakes[i];
@@ -431,70 +416,62 @@
                 }
             }
         }
+
+        let animationFrameId;
         function snowfallLoop() {
             drawSnowflakes();
-            requestAnimationFrame(snowfallLoop);
+            animationFrameId = requestAnimationFrame(snowfallLoop);
         }
-        function initSnowflakes() {
-            snowflakes = [];
-            let flakeCount = Math.floor(canvas.width / 19) + 10;
-            for (let i = 0; i < flakeCount; i++) {
-                snowflakes.push(createSnowflake());
-            }
-        }
-        window.addEventListener('resize', initSnowflakes);
-        initSnowflakes();
-        snowfallLoop();
 
-        function copyLink(type) {
-            let link = "";
-            let tooltipEl = null;
-            if (type === "repojson") {
-                link = "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json";
-                tooltipEl = document.getElementById("tooltip-repojson");
-            } else if (type === "ytpremiumv2") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremiumV2.module";
-                tooltipEl = document.getElementById("tooltip-ytpremiumv2");
-            } else if (type === "bilibili") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Bilibili-No-ADS/refs/heads/main/Bilibili%20No%20ADS";
-                tooltipEl = document.getElementById("tooltip-bilibili");
-            } else if (type === "spotify") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Spotify/refs/heads/main/SpotifyPre.module";
-                tooltipEl = document.getElementById("tooltip-spotify");
-            } else if (type === "picsart") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Picsart%20Premium.module";
-                tooltipEl = document.getElementById("tooltip-picsart");
-            } else if (type === "vsco") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/VSCO%20Premium.module";
-                tooltipEl = document.getElementById("tooltip-vsco");
-            } else if (type === "vivacut") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Vivacut.module";
-                tooltipEl = document.getElementById("tooltip-vivacut");
-            } else if (type === "soundcloudgo") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/SoundCloudPlus/refs/heads/main/soundcloudplus.module";
-                tooltipEl = document.getElementById("tooltip-soundcloudgo");
-            } else if (type === "alightmotion") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Alight%20Motion.module";
-                tooltipEl = document.getElementById("tooltip-alightmotion");
-            } else if (type === "lockgold") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locketgold-V7.module";
-                tooltipEl = document.getElementById("tooltip-lockgold");
-            } else if (type === "aio") {
-                link = "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/All-In-One%20-Nightmarket";
-                tooltipEl = document.getElementById("tooltip-aio");
-            }
-            if (link) {
-                navigator.clipboard.writeText(link).then(function() {
+        function initSnowflakes() {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            snowflakes = [];
+            let flakeCount = Math.floor(canvas.width / 25) + 10;
+            for (let i = 0; i < flakeCount; i++) snowflakes.push(createSnowflake());
+            snowfallLoop();
+        }
+        
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initSnowflakes();
+        });
+        
+        resizeCanvas();
+        initSnowflakes();
+
+        const links = {
+            "repojson": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/repo.json",
+            "ytpremiumv2": "https://raw.githubusercontent.com/NightmarketServer/Youtube-Premium/refs/heads/main/YouTubePremiumV2.module",
+            "bilibili": "https://raw.githubusercontent.com/NightmarketServer/Bilibili-No-ADS/refs/heads/main/Bilibili%20No%20ADS",
+            "spotify": "https://raw.githubusercontent.com/NightmarketServer/Spotify/refs/heads/main/SpotifyPre.module",
+            "picsart": "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Picsart%20Premium.module",
+            "vsco": "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/VSCO%20Premium.module",
+            "vivacut": "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Vivacut.module",
+            "soundcloudgo": "https://raw.githubusercontent.com/NightmarketServer/SoundCloudPlus/refs/heads/main/soundcloudplus.module",
+            "alightmotion": "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/Alight%20Motion.module",
+            "lockgold": "https://raw.githubusercontent.com/NightmarketServer/Locket/refs/heads/main/Locketgold-V7.module",
+            "aio": "https://raw.githubusercontent.com/NightmarketServer/Shadowrocket-Module/refs/heads/main/Module/All-In-One%20-Nightmarket"
+        };
+
+        function copyLink(event, element) {
+            event.preventDefault();
+            const linkId = element.dataset.linkId;
+            const link = links[linkId];
+            const tooltipEl = document.getElementById("tooltip-" + linkId);
+            
+            if (link && navigator.clipboard) {
+                navigator.clipboard.writeText(link).then(() => {
                     if (tooltipEl) {
+                        tooltipEl.innerText = "Đã copy!";
                         tooltipEl.classList.add('show-tooltip');
                         setTimeout(() => { tooltipEl.classList.remove('show-tooltip'); }, 1650);
                     }
-                }, function() {
+                }).catch(() => {
                     if (tooltipEl) {
-                        tooltipEl.innerText = "Không thể copy";
+                        tooltipEl.innerText = "Lỗi";
                         tooltipEl.classList.add('show-tooltip');
                         setTimeout(() => {
-                            tooltipEl.innerText = "Đã copy!";
+                            tooltipEl.classList.remove('show-tooltip');
                         }, 1650);
                     }
                 });
