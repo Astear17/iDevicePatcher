@@ -122,9 +122,9 @@
         .redirect-button i {
             font-size: 1.3em;
         }
-        .redirect-button.drive   { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
+        .redirect-button.drive    { background: linear-gradient(90deg,#34a853CC 60%,#4285f4CC 100%);}
         .redirect-button.drive:hover { background: linear-gradient(90deg,#0c7f3cCC 80%,#2962c9CC 100%);}
-        .redirect-button.faq     { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
+        .redirect-button.faq      { background: linear-gradient(90deg,#6366f1CC 60%,#38bdf8CC 100%);}
         .redirect-button.faq:hover { background: linear-gradient(90deg,#3730a3CC 70%,#0284c7CC 100%);}
         .redirect-button.releases { background: linear-gradient(90deg,#f59e42CC 60%,#f43f5eCC 100%);}
         .redirect-button.releases:hover { background: linear-gradient(90deg,#d97706CC 70%,#be185dCC 100%);}
@@ -175,12 +175,12 @@
             opacity: 1 !important;
         }
         hr {
-    border: none;
-    height: 1px;
-    margin: 18px 0;
-    width: 100%;
-    background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
-}
+            border: none;
+            height: 1px;
+            margin: 18px 0;
+            width: 100%;
+            background: linear-gradient(90deg,#38bdf8,#f43f5e 80%);
+            opacity: 0.8;
         }
         .button-header {
             color: #f2f3fa;
@@ -205,6 +205,14 @@
         }
         .altstore-button-wrapper .redirect-button {
             width: 100%;
+        }
+        .color-blue { background: linear-gradient(90deg,#005c99CC 60%,#3399ffCC 100%); }
+        .color-blue:hover { background: linear-gradient(90deg,#003366CC 70%,#0066ffCC 100%); }
+        .centered-text {
+            text-align: center;
+            opacity: 0.8;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -303,7 +311,7 @@
             <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollOpen_2.1_TrollStore.ipa" target="_blank" class="redirect-button copylockgold">
                 <i class="fa-solid fa-download"></i> TrollOpen v2.1 - Thanh bên để mở ứng dụng nhanh
             </a>
-            <a href="https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button copyrepojson">
+            <a href="apple-magnifier://install?url=https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TrollStore_2.1_BVNRepo_VietHoa.tar" target="_blank" class="redirect-button copyrepojson">
                 <i class="fa-solid fa-download"></i> TrollStore TAR v2.1 - TrollStore Việt Hoá, thêm nhiều tính năng hay
             </a>
         </div>
@@ -369,6 +377,15 @@
                 <i class="fa-solid fa-copy"></i> Module AIO (Locket, Spotify, YouTube)
                 <span class="copied-tooltip" id="tooltip-aio">Đã copy!</span>
             </button>
+        </div>
+        <hr>
+        <div class="button-section">
+            <a href="https://astear17.github.io" target="_blank" class="redirect-button color-blue centered-buttons">
+                <i class="fa-solid fa-user"></i> Astear17 - Personal site
+            </a>
+        </div>
+        <div class="centered-text">
+            Deploy and summarized by Astear17
         </div>
     </div>
     <script>
