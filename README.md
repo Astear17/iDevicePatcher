@@ -1,9 +1,13 @@
+# THÔNG BÁO
+> Toàn bộ dự án GitHub này sẽ được lưu trữ (archive) từ ngày 21/11 vì một số lý do bất khả kháng (một phần do acc iDevPatch trên TikTok @hyper_astear.17 đã bị cấm vĩnh viễn vì vi phạm Hướng dẫn Cộng đồng và DMCA từ YouTube trên GitHub)
+
+---
 # iDevicePatcher
 Chào mừng anh em đến với iDevicePatcher - nơi tôi tổng hợp IPA đã up trên TikTok: @hyper_astear.17 để ae có thể lấy link rồi paste thẳng vào TrollStore để tải. Không cần phải vào link drive chi cho lằng nhằng
 > Đây không phải là repository để patch hay là phần mềm gì hết, chả qua là tôi để cái tên iDevicePatcher cho vui thôi :P
 
------------------------
-# How To Use
+
+### How To Use
 Sẽ có 3 cách để tải xuông & cài đặt TIPA/IPA cho TrollStore, bao gồm import thẳng link, tải thủ công và cài bằng máy tính thông qua Sideloadly
 - Cách 1: Direct Install từ link (Install from URL)
   * Bước 1: Qua phần **[Releases](https://github.com/Astear17/iDevicePatcher/releases/tag/1.0)**, copy link GitHub của file (hoặc vào **[sourcelink.md](https://github.com/Astear17/iDevicePatcher/blob/main/sourcefile.md)** để copy link)
@@ -28,8 +32,4 @@ Sẽ có 3 cách để tải xuông & cài đặt TIPA/IPA cho TrollStore, bao g
 - Trong này đa số là ***TIPA*** hoặc ***IPA DÀNH CHO TROLLSTORE*** nên là ae lưu ý khi cài nhé, kẻo tải trúng bản TrollStore xong cài bằng chứng chỉ xong lại nói tôi nữa thì cũng chịu =)))
 -----------------------
 **Contact/Support Me**
-- TikTok: https://www.tiktok.com/@hyper_astear.17
-- Facebook (Messenger): https://facebook.com/Astear17Clone
-- Zalo: +84 359 623 729
-- Banking: MBBank 014015111234 (NGUYEN THI THUONG)
-
+- ~~TikTok: https://www.tiktok.com/@hyper_astear.17~~
