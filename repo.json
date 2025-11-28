@@ -33,7 +33,7 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa"
             },
             {
-                "name": "minecraft 1.21.123",
+                "name": "Minecraft 1.21.123",
                 "bundleIdentifier": "com.mojang.minecraftpe",
                 "developerName": "Mojang",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
@@ -81,6 +81,31 @@
                 "versionDate": "2025-09-03T12:00:00Z",
                 "size": 16000000,
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_1.5.8_1745765925.ipa"
+            },
+            {
+                "name": "ESign VN",
+                "bundleIdentifier": "com.esign.app",
+                "developerName": "Khoindvn",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ESign.png",
+                "localizedDescription": "ESign IPA",
+                "subtitle": "ESign IPA",
+                "tintColor": "dee256",
+                "category": "utilities",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ESign.ipa",
+                        "size": 16000000,
+                        "version": "1.5.8",
+                        "buildVersion": "1",
+                        "date": "2025-09-03T12:00:00Z",
+                        "localizedDescription": "Esign IPA",
+                        "minOSVersion": "15.0"
+                    }
+                ],
+                "version": "1.5.8",
+                "versionDate": "2025-09-03T12:00:00Z",
+                "size": 16000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ESign.ipa"
             },
             {
                 "name": "Feather",
