@@ -33,6 +33,31 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa"
             },
             {
+                "name": "minecraft 1.21.123",
+                "bundleIdentifier": "com.mojang.minecraftpe",
+                "developerName": "Mojang",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
+                "localizedDescription": "Minecraft 1.21.123, decrypted",
+                "subtitle": "Minecraft 1.21.123, decrypted",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_1.21.123.ipa",
+                        "size": 135000000,
+                        "version": "1.21.123",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Minecraft 1.21.123, decrypted",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "1.21.1232.8.0",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_1.21.123.ipa"
+            },
+            {
                 "name": "Zsign",
                 "bundleIdentifier": "com.zsign.app",
                 "developerName": "Zsign.app",
