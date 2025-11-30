@@ -2,7 +2,7 @@
         "name": "iDevPatcher",
         "identifier": "astear17.idevicepatcher-repo",
         "subtitle": "Collection of IPA files I've shared on my TikTok account, @hyper_astear.17",
-        "description": "Welcome to iDevicePatcher! This repository is a collection of IPA files I've shared on my TikTok account, @hyper_astear.17. You can use the files here to sign and use via certificates.",
+        "description": "Welcome to iDevicePatcher! This repository is a collection of IPA files. You can use the files here to sign and use via certificates.",
         "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/148e3823dc91187c9122eacdde370fbf97305f83/Untitled28_20250826191037.png",
         "website": "https://astear17.github.io/iDevicePatcher",
         "tintColor": "e25659",
@@ -12,7 +12,7 @@
                 "bundleIdentifier": "com.locket.Locket",
                 "developerName": "Locket Widget",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/LocketGold.png",
-                "localizedDescription": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
+                "localizedDescription": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension) - v2.8.0",
                 "subtitle": "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension)",
                 "tintColor": "dee256",
                 "category": "photo-video",
@@ -37,8 +37,8 @@
                 "bundleIdentifier": "com.mojang.minecraftpe",
                 "developerName": "Mojang",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
-                "localizedDescription": "Minecraft 1.21.123, decrypted",
-                "subtitle": "Minecraft 1.21.123, decrypted",
+                "localizedDescription": "Minecraft 1.21.123, decrypted, có Xbox login",
+                "subtitle": "Minecraft 1.21.123, decrypted, có Xbox login",
                 "tintColor": "dee256",
                 "category": "photo-video",
                 "versions": [
@@ -48,7 +48,7 @@
                         "version": "1.21.123",
                         "buildVersion": "1",
                         "date": "2025-12-12T12:00:00Z",
-                        "localizedDescription": "Minecraft 1.21.123, decrypted",
+                        "localizedDescription": "Minecraft 1.21.123, decrypted, có Xbox login",
                         "minOSVersion": "14.1"
                     }
                 ],
@@ -56,6 +56,31 @@
                 "versionDate": "2025-12-12T12:00:00Z",
                 "size": 135000000,
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_1.21.123.ipa"
+            },
+            {
+                "name": "Brother Hai's Pho Restaurant",
+                "bundleIdentifier": "com.marisa0704.haisphorestaurant",
+                "developerName": "Mojang",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
+                "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa"
             },
             {
                 "name": "Zsign",
