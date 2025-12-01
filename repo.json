@@ -33,22 +33,22 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa"
             },
             {
-                "name": "Minecraft 1.21.123",
+                "name": "Minecraft 1.21.124",
                 "bundleIdentifier": "com.mojang.minecraftpe",
                 "developerName": "Mojang",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
-                "localizedDescription": "Minecraft 1.21.123, decrypted, có Xbox login",
-                "subtitle": "Minecraft 1.21.123, decrypted, có Xbox login",
+                "localizedDescription": "Minecraft 1.21.124, decrypted, có Xbox login",
+                "subtitle": "Minecraft 1.21.124, decrypted, có Xbox login",
                 "tintColor": "dee256",
                 "category": "photo-video",
                 "versions": [
                     {
-                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_1.21.123.ipa",
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_v1.21.124.ipa",
                         "size": 135000000,
-                        "version": "1.21.123",
+                        "version": "1.21.124",
                         "buildVersion": "1",
                         "date": "2025-12-12T12:00:00Z",
-                        "localizedDescription": "Minecraft 1.21.123, decrypted, có Xbox login",
+                        "localizedDescription": "Minecraft 1.21.124, decrypted, có Xbox login",
                         "minOSVersion": "14.1"
                     }
                 ],
@@ -137,50 +137,150 @@
                 "bundleIdentifier": "com.robtop.geometryjump",
                 "developerName": "RobTop",
                 "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/gd.png",
-                "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
-                "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "localizedDescription": "Geometry Dash 2.2 bản trắng App Store, không crack",
+                "subtitle": "Geometry Dash 2.2 bản trắng App Store, không crack",
                 "tintColor": "dee256",
                 "category": "photo-video",
                 "versions": [
                     {
-                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Geometry_Dash_v2.207.ipa",
                         "size": 135000000,
                         "version": "1.0.8",
                         "buildVersion": "1",
                         "date": "2025-12-12T12:00:00Z",
-                        "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                        "localizedDescription": "Geometry Dash 2.2 bản trắng App Store, không crack",
                         "minOSVersion": "14.1"
                     }
                 ],
                 "version": "10.8",
                 "versionDate": "2025-12-12T12:00:00Z",
                 "size": 135000000,
-                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa"
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Geometry_Dash_v2.207.ipa"
             },
             {
-                "name": "Brother Hai's Pho Restaurant",
-                "bundleIdentifier": "com.marisa0704.haisphorestaurant",
-                "developerName": "Mojang",
-                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/phoanhhai.png",
-                "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
-                "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "name": "ibisPaint bản đen 250k (App Store)",
+                "bundleIdentifier": "jp.ne.ibis.ibispaint.app",
+                "developerName": "ibis inc.",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ibisPaint.png",
+                "localizedDescription": "ibisPaint bản đen 250k (App Store)",
+                "subtitle": "ibisPaint bản đen 250k (App Store)",
                 "tintColor": "dee256",
                 "category": "photo-video",
                 "versions": [
                     {
-                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ibisPaint_NoAds_v13.1.9.ipa",
                         "size": 135000000,
                         "version": "1.0.8",
                         "buildVersion": "1",
                         "date": "2025-12-12T12:00:00Z",
-                        "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                        "localizedDescription": "ibisPaint bản đen 250k (App Store)",
                         "minOSVersion": "14.1"
                     }
                 ],
                 "version": "10.8",
                 "versionDate": "2025-12-12T12:00:00Z",
                 "size": 135000000,
-                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa"
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ibisPaint_NoAds_v13.1.9.ipa"
+            },
+            {
+                "name": "ProCam - ProCamera (App Store)",
+                "bundleIdentifier": "gemini.ProCam-2",
+                "developerName": "Tinkerworks",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/procam.png",
+                "localizedDescription": "ProCam - ProCamera bản trắng $9,99 (App Store)",
+                "subtitle": "ProCam - ProCamera bản trắng $9,99 (App Store)",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ProCam_v14.8.5.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "ProCam - ProCamera bản trắng $9,99 (App Store)",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ProCam_v14.8.5.ipa"
+            },
+            {
+                "name": "RoPhim VIP (RoX)",
+                "bundleIdentifier": "co.roteam.roteamios",
+                "developerName": "RoTeam",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/rox.png",
+                "localizedDescription": "RoX iPA, cre Huy Nguyen (34306)",
+                "subtitle": "RoX iPA, cre Huy Nguyen (34306)",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/RoPhim_VIP_v1.0.5.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "RoX iPA, cre Huy Nguyen (34306)",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/RoPhim_VIP_v1.0.5.ipa"
+            },
+            {
+                "name": "Shadowrocket v2.2.72 (App Store)",
+                "bundleIdentifier": "com.liguangming.Shadowrocket",
+                "developerName": "Liguangming",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ibisPaint.png",
+                "localizedDescription": "Shadowrocket bản App Store, v2.2.72",
+                "subtitle": "Shadowrocket bản App Store, v2.2.72",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_v2.2.72.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Shadowrocket bản App Store, v2.2.72",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_v2.2.72.ipa"
+            },
+            {
+                "name": "Stable - Video Stabilizer bản $4,99 (App Store)",
+                "bundleIdentifier": "jp.ne.ibis.ibispaint.app",
+                "developerName": "ibis inc.",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/stable.png",
+                "localizedDescription": "Stable - Video Stabilizer bản $4,99 (App Store)",
+                "subtitle": "ibisPaint bản đen 250k (App Store)",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/VideoStabilizer_v1.1.6.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Stable - Video Stabilizer bản $4,99 (App Store)",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/VideoStabilizer_v1.1.6.ipa"
             },
             {
                 "name": "Zsign",
