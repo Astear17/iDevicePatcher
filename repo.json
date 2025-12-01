@@ -61,7 +61,107 @@
                 "name": "Brother Hai's Pho Restaurant",
                 "bundleIdentifier": "com.marisa0704.haisphorestaurant",
                 "developerName": "Mojang",
-                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/phoanhhai.png",
+                "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa"
+            },
+            {
+                "name": "Alight Motion Premium",
+                "bundleIdentifier": "com.alightcreative.motion",
+                "developerName": "Alight Motion",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/AlightMotion.png",
+                "localizedDescription": "Alight Motion Premium, không log acc, nguồn Lê Tí (iOS CodeVN)",
+                "subtitle": "Alight Motion Premium, không log acc, nguồn Lê Tí (iOS CodeVN)",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Alight.Motion_Premium_v6.2.38.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Alight Motion Premium, không log acc, nguồn Lê Tí (iOS CodeVN)",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Alight.Motion_Premium_v6.2.38.ipa"
+            },
+            {
+                "name": "Camera+ (App Store)",
+                "bundleIdentifier": "com.latenitesoft.CameraPlus2",
+                "developerName": "Latenite",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/cameraplus.png",
+                "localizedDescription": "Camera+ bản App Store, v24.5.3",
+                "subtitle": "Camera+ bản App Store, v24.5.3",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Camera+_v24.5.3.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Camera+ bản App Store, v24.5.3",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Camera+_v24.5.3.ipa"
+            },
+            {
+                "name": "Geometry Dash",
+                "bundleIdentifier": "com.robtop.geometryjump",
+                "developerName": "RobTop",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/gd.png",
+                "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
+                        "size": 135000000,
+                        "version": "1.0.8",
+                        "buildVersion": "1",
+                        "date": "2025-12-12T12:00:00Z",
+                        "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "10.8",
+                "versionDate": "2025-12-12T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa"
+            },
+            {
+                "name": "Brother Hai's Pho Restaurant",
+                "bundleIdentifier": "com.marisa0704.haisphorestaurant",
+                "developerName": "Mojang",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/phoanhhai.png",
                 "localizedDescription": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
                 "subtitle": "Phở anh Hai bản iPA, port từ APKMody, v1.0.8",
                 "tintColor": "dee256",
