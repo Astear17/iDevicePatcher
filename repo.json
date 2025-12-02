@@ -33,6 +33,31 @@
                 "downloadURL": "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_2.8.0_Gold.ipa"
             },
             {
+                "name": "File cert Khoindvn (Esign & Ksign)",
+                "bundleIdentifier": "com.esign.khoindvn",
+                "developerName": "Khoindvn",
+                "iconURL": "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Ksign.png",
+                "localizedDescription": "Tổng hợp file chứng chỉ Khoindvn đuôi .esigncert & .ksign",
+                "subtitle": "Tổng hợp file chứng chỉ Khoindvn đuôi .esigncert & .ksign",
+                "tintColor": "dee256",
+                "category": "photo-video",
+                "versions": [
+                    {
+                        "downloadURL": "https://github.com/esigncert/khoindvn/raw/refs/heads/main/document/DNS/Certs-Khoindvn.zip",
+                        "size": 135000000,
+                        "version": "2.8.0",
+                        "buildVersion": "1",
+                        "date": "2025-09-03T12:00:00Z",
+                        "localizedDescription": "Tổng hợp file chứng chỉ Khoindvn đuôi .esigncert & .ksign",
+                        "minOSVersion": "14.1"
+                    }
+                ],
+                "version": "2.8.0",
+                "versionDate": "2025-09-03T12:00:00Z",
+                "size": 135000000,
+                "downloadURL": "https://github.com/esigncert/khoindvn/raw/refs/heads/main/document/DNS/Certs-Khoindvn.zip"
+            },
+            {
                 "name": "Minecraft 1.21.124",
                 "bundleIdentifier": "com.mojang.minecraftpe",
                 "developerName": "Mojang",
