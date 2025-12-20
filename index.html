@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iDevPatcher Repository</title>
-    
-    <!-- Tailwind CSS -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/BCO.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/BCO.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,43 +19,30 @@
             }
         }
     </script>
-    
-    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        /* Smooth transitions for dark mode toggles on elements */
         .theme-transition {
             transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
         }
-        
         .app-icon {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-
         .download-btn {
-            background-color: #007AFF; /* Apple Blue */
+            background-color: #007AFF;
             transition: all 0.2s ease;
         }
-
         .download-btn:hover {
             background-color: #0062cc;
             transform: scale(1.02);
         }
-
         .download-btn:active {
             transform: scale(0.98);
         }
-
-        /* Glassmorphism Header */
         header {
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -63,39 +50,25 @@
     </style>
 </head>
 <body class="bg-[#f2f2f7] dark:bg-[#000000] text-gray-900 dark:text-gray-100 pb-20 selection:bg-blue-500 selection:text-white">
-
-    <!-- Header -->
     <header class="fixed top-0 w-full z-50 theme-transition border-b border-gray-200 dark:border-gray-800 bg-white/85 dark:bg-[#1c1c1e]/85">
         <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-            <!-- Left: Back Button -->
             <a href="https://astear17.github.io" class="w-1/3 text-blue-500 font-medium flex items-center hover:opacity-70 transition group">
                 <i data-lucide="chevron-left" class="w-5 h-5 mr-0.5 group-hover:-translate-x-1 transition-transform"></i>
                 <span id="nav-back">Trang chủ</span>
             </a>
-
-            <!-- Center: Title -->
             <div class="w-1/3 font-bold text-lg text-center truncate">
                 iDevPatcher
             </div>
-
-            <!-- Right: Dark Mode Toggle -->
             <div class="w-1/3 flex justify-end">
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300">
-                    <!-- Sun Icon (shows in dark mode) -->
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
-                    <!-- Moon Icon (shows in light mode) -->
                     <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
                 </button>
             </div>
         </div>
     </header>
-
-    <!-- Main Content Container -->
     <main class="max-w-3xl mx-auto px-4 mt-20" id="app-container">
-        <!-- App cards injected via JS -->
     </main>
-
-    <!-- Language Footer -->
     <footer class="max-w-3xl mx-auto px-4 mt-8 mb-8 text-center">
         <div class="inline-flex bg-gray-200 dark:bg-[#1c1c1e] p-1 rounded-lg">
             <button onclick="setLanguage('vi')" id="btn-vi" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all">Tiếng Việt</button>
@@ -103,13 +76,7 @@
         </div>
         <p class="text-xs text-gray-400 mt-4">Build and deployed by Astear17</p>
     </footer>
-
     <script>
-        // ==========================================
-        // 1. CONFIGURATION AREA
-        // ==========================================
-        
-        // Use 'description_vi' for Vietnamese and 'description_en' for English
         const apps = [
     {
         name: "Locket (Gold)",
@@ -136,16 +103,64 @@
         description_vi: "Minecraft 1.21.124, decrypted, có Xbox login"
     },
     {
-        name: "Brother Hai's Pho Restaurant",
-        publisher: "Marisa0704 - APKMody",
+        name: "LQ Mobile (Khoindvn Hack),
+        publisher: "Khoindvn - Garena",
         type: "Games",
         version: "v1.0.8",
         date: "02/12/2025",
-        size: "1.08 GB",
+        size: "190 MB",
         iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/phoanhhai.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Brother_Hai.s_Pho_Restaurant_v1.0.8_APKMody-Port.ipa",
-        description_en: "Brother Hai's Pho Restaurant iPA, ported from APKMody",
-        description_vi: "Phở anh Hai bản iPA, port từ APKMody"
+        downloadLink: "https://github.com/esigncert/khoindvn/releases/download/iPA/AovCheat.ipa",
+        description_en: "Arena of Valor hacking tool",
+        description_vi: "Map Sáng, Đánh Kín Antiban"
+    },
+    {
+        name: "LQ Mobile (Khoindvn Mod skin),
+        publisher: "Khoindvn - Garena",
+        type: "Games",
+        version: "v1.0.8",
+        date: "02/12/2025",
+        size: "180 MB",
+        iconUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/f9/70/7ff970e7-3b59-b769-34b5-e18c10e48990/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/512x512bb.jpg",
+        downloadLink: "https://github.com/esigncert/khoindvn/releases/download/iPA/AovMod.ipa",
+        description_en: "Arena of Valor skin modding tool",
+        description_vi: "Mod skin LQ Mobile"
+    },
+    {
+        name: "Câu Cá Vạn Cân (Mod Khoindvn),
+        publisher: "Khoindvn - Builda",
+        type: "Games",
+        version: "v1.0.8",
+        date: "02/12/2025",
+        size: "87.6 MB",
+        iconUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC9_GFjd0b8QTtE4gSCRuZmzGyR6wczYUUDDZwOG3HbQ&s=10",
+        downloadLink: "https://github.com/esigncert/khoindvn/releases/download/iPA/cava.ipa",
+        description_en: "Mod speed and currency",
+        description_vi: "Mod speed Tiền Vàng Cá"
+    },
+    {
+        name: "Delta VNG",
+        publisher: "Khoindvn - Delta Exploits",
+        type: "Games",
+        version: "v1.0.8",
+        date: "02/12/2025",
+        size: "180 MB",
+        iconUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/cd/0c/0fcd0c28-8cea-2165-85f0-731e14618522/AppIcon_VNGGames_New-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+        downloadLink: "https://github.com/esigncert/khoindvn/releases/download/iPA/DeltaVN.ipa",
+        description_en: "Roblox VNG exploiting tool from Delta",
+        description_vi: "Hack exploit Roblox Delta VNG"
+    },
+    {
+        name: "Skibx VNG,
+        publisher: "Khoindvn - Huymythhic",
+        type: "Games",
+        version: "v1.0.8",
+        date: "02/12/2025",
+        size: "107 MB",
+        iconUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/cd/0c/0fcd0c28-8cea-2165-85f0-731e14618522/AppIcon_VNGGames_New-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+        downloadLink: "https://github.com/esigncert/khoindvn/releases/download/iPA/SkibXVM.ipa",
+        description_en: "Roblox VNG exploiting tool from Delta",
+        description_vi: "Hack exploit Roblox VNG Skibx"
     },
     {
         name: "Alight Motion Premium",
@@ -376,8 +391,6 @@
         description_vi: "Hạ phiên bản app trên App Store"
     }
         ];
-
-        // Translation Dictionary
         const i18n = {
             vi: {
                 back: "Trang chủ",
@@ -394,24 +407,14 @@
                 uploaded: "Uploaded"
             }
         };
-
-        // ==========================================
-        // 2. LOGIC (THEME & LANGUAGE)
-        // ==========================================
-
-        let currentLang = 'vi'; // Default language
-
-        // --- Theme Logic ---
+        let currentLang = 'vi'; 
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
-
-        // Check local storage or system preference
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlElement.classList.add('dark');
         } else {
             htmlElement.classList.remove('dark');
         }
-
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
             if (htmlElement.classList.contains('dark')) {
@@ -420,22 +423,13 @@
                 localStorage.theme = 'light';
             }
         });
-
-        // --- Language Logic ---
         function setLanguage(lang) {
             currentLang = lang;
-            
-            // Update static UI text
             document.getElementById('nav-back').innerText = i18n[lang].back;
-
-            // Update footer button styles
             const btnVi = document.getElementById('btn-vi');
             const btnEn = document.getElementById('btn-en');
-            
-            // Active state classes
             const activeClass = ['bg-white', 'text-black', 'shadow-sm', 'dark:bg-gray-700', 'dark:text-white'];
             const inactiveClass = ['text-gray-500', 'hover:text-gray-800', 'dark:text-gray-400', 'dark:hover:text-gray-200'];
-
             if (lang === 'vi') {
                 btnVi.classList.add(...activeClass);
                 btnVi.classList.remove(...inactiveClass);
@@ -447,46 +441,30 @@
                 btnVi.classList.remove(...activeClass);
                 btnVi.classList.add(...inactiveClass);
             }
-
-            // Re-render apps
             renderApps();
         }
-
-        // ==========================================
-        // 3. RENDER LOGIC
-        // ==========================================
-
         const container = document.getElementById('app-container');
-
         const handleImageError = (img) => {
-            // Dark mode aware placeholder
             const isDark = htmlElement.classList.contains('dark');
             const bg = isDark ? '333333' : 'e2e8f0';
             const fg = isDark ? '888888' : '94a3b8';
             img.src = `https://placehold.co/150x150/${bg}/${fg}?text=App`;
         };
-
         function renderApps() {
-            container.innerHTML = ''; // Clear existing
-            const t = i18n[currentLang]; // Get current dictionary
-
+            container.innerHTML = ''; 
+            const t = i18n[currentLang]; 
             apps.forEach(app => {
                 const desc = currentLang === 'vi' ? (app.description_vi || app.description_en) : app.description_en;
-                
                 const card = document.createElement('div');
                 card.className = "theme-transition bg-white dark:bg-[#1c1c1e] rounded-2xl p-4 mb-4 shadow-sm border border-gray-100 dark:border-gray-800";
-
                 card.innerHTML = `
                     <div class="flex flex-row items-start gap-4">
-                        <!-- Icon -->
                         <div class="flex-shrink-0">
                             <img src="${app.iconUrl}" 
                                  alt="${app.name}" 
                                  onerror="handleImageError(this)"
                                  class="app-icon w-20 h-20 sm:w-24 sm:h-24 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-700 border dark:border-gray-700">
                         </div>
-
-                        <!-- Info -->
                         <div class="flex-grow flex flex-col sm:flex-row sm:justify-between sm:items-center w-full min-w-0">
                             <div class="flex flex-col pr-2">
                                 <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white leading-tight mb-1 truncate">
@@ -503,8 +481,6 @@
                                     <span>${app.size}</span>
                                 </div>
                             </div>
-
-                            <!-- Button -->
                             <div class="mt-3 sm:mt-0 sm:ml-4 flex-shrink-0">
                                 <a href="${app.downloadLink}" 
                                    class="download-btn block w-full sm:w-auto text-center text-white font-bold text-sm px-6 py-2 rounded-full shadow-sm hover:shadow-md">
@@ -513,25 +489,16 @@
                             </div>
                         </div>
                     </div>
-
                     <hr class="my-3 border-gray-100 dark:border-gray-700 theme-transition">
-
-                    <!-- Description -->
                     <div class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed px-1">
                         ${desc}
                     </div>
                 `;
                 container.appendChild(card);
             });
-            
-            // Re-init icons for new content if necessary (though mostly static)
             lucide.createIcons();
         }
-
-        // Initial Load
         setLanguage('vi'); 
-
-        // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             if (!localStorage.theme) {
                 if (e.matches) htmlElement.classList.add('dark');
