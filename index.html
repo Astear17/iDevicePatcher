@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi" class="light"> 
+<html lang="vi" class="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>iDevPatcher Repository</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/BCO.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/BCO.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -14,323 +22,498 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', '-apple-system', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
+        :root {
+            /* Variables from File 6 & 10 Hybrid */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent-blue: #007AFF;
+            /* Liquid BG from File 6 */
+            --liquid-bg-light: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            --liquid-bg-dark: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background: var(--liquid-bg-light);
+            color: #111827;
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: color 0.5s ease;
         }
-        .theme-transition {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+        html.dark body {
+            background: var(--liquid-bg-dark);
+            color: #f3f4f6;
         }
-        .app-icon {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        /* --- Animated Mesh Background (File 6 Style) --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+            z-index: -2;
+            animation: meshMove 20s ease-in-out infinite alternate;
         }
+
+        @keyframes meshMove {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(2%, 2%); }
+        }
+
+        /* --- Header: Flying Dock (File 3) --- */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        html.dark .glass-header {
+            background: rgba(28, 28, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- Card: Top Left Lighting & Glass (File 10) --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 28px;
+            box-shadow: 
+                inset 0 0 20px rgba(255, 255, 255, 0.05),
+                0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+        }
+
+        html.dark .glass-card {
+            background: rgba(30, 30, 35, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Top Left Lighting Effect (File 10) */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 28px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                inset 0 0 20px rgba(255, 255, 255, 0.1),
+                0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- Button: Liquid Mercury (File 8) --- */
         .download-btn {
-            background-color: #007AFF;
-            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #007AFF; /* Blue text for visibility in light mode */
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+            display: inline-block;
+            text-align: center;
         }
+
+        html.dark .download-btn {
+            color: white;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            transition: transform 0.5s ease;
+            transform: scale(0);
+        }
+
         .download-btn:hover {
-            background-color: #0062cc;
-            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 122, 255, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.2);
         }
-        .download-btn:active {
-            transform: scale(0.98);
+
+        .download-btn:hover::before {
+            transform: scale(1);
         }
-        header {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+
+        /* --- App Icon (File 5) --- */
+        .app-icon {
+            border-radius: 1.5rem; /* ~24px */
+            box-shadow:
+                0 8px 24px rgba(0, 122, 255, 0.15),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover .app-icon {
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        /* --- Language Toggle (File 10) --- */
+        .lang-toggle-container {
+            background: rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 4px;
+            display: inline-flex;
+        }
+        html.dark .lang-toggle-container {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* --- Animation --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* --- Typography (File 6) --- */
+        .title-text {
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
     </style>
 </head>
-<body class="bg-[#f2f2f7] dark:bg-[#000000] text-gray-900 dark:text-gray-100 pb-20 selection:bg-blue-500 selection:text-white">
-    <header class="fixed top-0 w-full z-50 theme-transition border-b border-gray-200 dark:border-gray-800 bg-white/85 dark:bg-[#1c1c1e]/85">
-        <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-            <a href="https://astear17.github.io" class="w-1/3 text-blue-500 font-medium flex items-center hover:opacity-70 transition group">
-                <i data-lucide="chevron-left" class="w-5 h-5 mr-0.5 group-hover:-translate-x-1 transition-transform"></i>
-                <span id="nav-back">Trang chủ</span>
+<body class="selection:bg-blue-500 selection:text-white">
+
+    <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+        <div class="glass-header w-full max-w-4xl h-16 rounded-[2rem] px-6 flex items-center justify-between transition-all duration-300">
+            
+            <a href="https://astear17.github.io" class="flex-1 text-blue-600 dark:text-blue-400 font-medium flex items-center hover:opacity-70 transition group">
+                <div class="p-1.5 rounded-full bg-blue-50/50 dark:bg-blue-900/20 mr-2 group-hover:-translate-x-1 transition-transform duration-300">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </div>
+                <span id="nav-back" class="tracking-wide text-sm font-semibold hidden sm:inline">Trang chủ</span>
             </a>
-            <div class="w-1/3 font-bold text-lg text-center truncate">
-                iDevPatcher
+
+            <div class="flex-1 text-center truncate">
+                <span class="text-2xl font-bold tracking-tighter title-text">
+                    iDev<span class="text-blue-500">Patcher</span>
+                </span>
             </div>
-            <div class="w-1/3 flex justify-end">
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-300">
-                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
-                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+
+            <div class="flex-1 flex justify-end">
+                <button id="theme-toggle" class="p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-blue-500 dark:text-blue-400"></i>
                 </button>
             </div>
         </div>
     </header>
-    <main class="max-w-3xl mx-auto px-4 mt-20" id="app-container">
-    </main>
-    <footer class="max-w-3xl mx-auto px-4 mt-8 mb-8 text-center">
-        <div class="inline-flex bg-gray-200 dark:bg-[#1c1c1e] p-1 rounded-lg">
-            <button onclick="setLanguage('vi')" id="btn-vi" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all">Tiếng Việt</button>
-            <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all">English</button>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-20" id="app-container">
+        </main>
+
+    <footer class="max-w-3xl mx-auto px-4 mb-12 text-center relative z-10">
+        <div class="lang-toggle-container">
+            <button onclick="setLanguage('vi')" id="btn-vi" class="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300">Tiếng Việt</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300">English</button>
         </div>
-        <p class="text-xs text-gray-400 mt-4">Build and deployed by Astear17</p>
+        <p class="text-xs font-medium text-gray-500 dark:text-gray-400 mt-6 tracking-wide uppercase opacity-70">
+            Build and deployed by Astear17
+        </p>
     </footer>
+
     <script>
         const apps = [
-    {
-        name: "Locket (Gold)",
-        publisher: "Locket Labs, Inc.",
-        type: "Photo & Video",
-        version: "v2.8.0",
-        date: "02/12/2025",
-        size: "135 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/LocketGold.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa",
-        description_en: "Injected with Gold - 5s recording only, inject_EXT (fixExtension)",
-        description_vi: "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension) - v2.8.0"
-    },
-    {
-        name: "Minecraft",
-        publisher: "Mojang Studio",
-        type: "Games",
-        version: "v1.21.124",
-        date: "02/12/2025",
-        size: "590 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_v1.21.124.ipa",
-        description_en: "Minecraft 1.21.124, decrypted, Xbox login supported",
-        description_vi: "Minecraft 1.21.124, decrypted, có Xbox login"
-    },
-    {
-        name: "Alight Motion Premium",
-        publisher: "Bending Spoons Apps ApS",
-        type: "Photo & Video",
-        version: "v6.2.38",
-        date: "02/12/2025",
-        size: "115 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/AlightMotion.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Alight.Motion_Premium_v6.2.38.ipa",
-        description_en: "Alight Motion Premium, no account login, iPA from iOS CodeVN",
-        description_vi: "Alight Motion Premium, không log acc, nguồn Lê Tí (iOS CodeVN)"
-    },
-    {
-        name: "Camera+ (App Store)",
-        publisher: "Latenite",
-        type: "Photo & Video",
-        version: "v24.5.3",
-        date: "02/12/2025",
-        size: "202 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/cameraplus.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Camera+_v24.5.3.ipa",
-        description_en: "Camera+ - from App Store",
-        description_vi: "Camera+ bản App Store, v24.5.3"
-    },
-    {
-        name: "Geometry Dash",
-        publisher: "RobTop",
-        type: "Games",
-        version: "v2.207",
-        date: "02/12/2025",
-        size: "148 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/gd.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Geometry_Dash_v2.207.ipa",
-        description_en: "Geometry Dash 2.2 - from App Store, no crack/mod included",
-        description_vi: "Geometry Dash 2.2 bản trắng App Store, không crack/mod"
-    },
-    {
-        name: "ibisPaint (No Ads)",
-        publisher: "ibis inc.",
-        type: "Photo & Video",
-        version: "v13.1.9",
-        date: "02/12/2025",
-        size: "129 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ibisPaint.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ibisPaint_NoAds_v13.1.9.ipa",
-        description_en: "ibisPaint Paid version (from App Store)",
-        description_vi: "ibisPaint bản đen 250k (App Store)"
-    },
-    {
-        name: "ProCam - ProCamera",
-        publisher: "Tinkerworks",
-        type: "Photo & Video",
-        version: "v14.8.5",
-        date: "02/12/2025",
-        size: "65.7 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/procam.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ProCam_v14.8.5.ipa",
-        description_en: "ProCam - ProCamera ($9.99 on App Store)",
-        description_vi: "ProCam - ProCamera bản trắng $9,99 (App Store)"
-    },
-    {
-        name: "RoPhim VIP (RoX)",
-        publisher: "RoTeam",
-        type: "Entertainment",
-        version: "v1.0.5",
-        date: "02/12/2025",
-        size: "36.7 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/rox.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/RoPhim_VIP_v1.0.5.ipa",
-        description_en: "RoX iPA, from Huy Nguyen (34306)",
-        description_vi: "RoX iPA, cre Huy Nguyen (34306)"
-    },
-    {
-        name: "Shadowrocket",
-        publisher: "Liguangming",
-        type: "Utilities",
-        version: "v2.2.72",
-        date: "02/12/2025",
-        size: "42.2 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/shadow.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_v2.2.72.ipa",
-        description_en: "Shadowrocket - from App Store",
-        description_vi: "Shadowrocket bản App Store, v2.2.72"
-    },
-    {
-        name: "Stable - Video Stabilizer",
-        publisher: "Le Giang Nam",
-        type: "Apps",
-        version: "v1.1.6",
-        date: "02/12/2025",
-        size: "13.9 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/stable.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/VideoStabilizer_v1.1.6.ipa",
-        description_en: "Stable - Video Stabilizer ($4.99 from App Store)",
-        description_vi: "Stable - Video Stabilizer bản $4,99 (App Store)"
-    },
-    {
-        name: "Zsign",
-        publisher: "Zsign.app",
-        type: "Utilities",
-        version: "v1.5.8",
-        date: "02/12/2025",
-        size: "15.5 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ZSign.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_v1.5.8.ipa",
-        description_en: "ZSign for iOS 15 and later",
-        description_vi: "ZSign cho iOS 15 trở lên"
-    },
-    {
-        name: "ESign VN",
-        publisher: "Khoindvn",
-        type: "Utilities",
-        version: "v1.5.8",
-        date: "02/12/2025",
-        size: "43.8 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ESign.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ESign.ipa",
-        description_en: "ESign iPA - Khoindvn",
-        description_vi: "ESign iPA - Khoindvm"
-    },
-    {
-        name: "Feather",
-        publisher: "SAMSAM - khcrysalis",
-        type: "Utilities",
-        version: "v1.3.1",
-        date: "02/12/2025",
-        size: "12.1 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Feather.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa",
-        description_en: "Feather for iOS 15 and later",
-        description_vi: "Feather cho iOS 15 trở lên"
-    },
-    {
-        name: "MonPlayer Premium",
-        publisher: "iOS CodeVN",
-        type: "Entertainment",
-        version: "v1.3.9",
-        date: "02/12/2025",
-        size: "36.4 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/MonPlayer.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MonPlayer++_1.3.9_14.0_LeTi.ipa",
-        description_en: "MonPlayer No Ads, iPA from iOS CodeVN",
-        description_vi: "MonPlayer Không quảng cáo, nguồn Lê Tí - iOS CodeVN"
-    },
-    {
-        name: "Chrome iOS 15",
-        publisher: "Google LLC",
-        type: "Apps",
-        version: "v125.6422.145",
-        date: "02/12/2025",
-        size: "78.2 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Chrome.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Chrome_125.6422.145_iOS-15.ipa",
-        description_en: "Chrome for iOS 15 and later",
-        description_vi: "Chrome cho iOS 15 trở lên"
-    },
-    {
-        name: "EeveeSpotify",
-        publisher: "whoeevee",
-        type: "Music",
-        version: "v9.0.68",
-        date: "02/12/2025",
-        size: "80.3 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Spotify.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa",
-        description_en: "Spotify Premium, supports Google/Facebook login, no ads, no offline download",
-        description_vi: "Spotify Premium, log Google/Facebook"
-    },
-    {
-        name: "YTMusicUltimate",
-        publisher: "Google LLC",
-        type: "Music",
-        version: "v7.21.1",
-        date: "02/12/2025",
-        size: "83.5 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YTMusic.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa",
-        description_en: "Injected with YTMusicUltimate",
-        description_vi: "Đã tiêm YTMusicUltimate"
-    },
-    {
-        name: "YouTube tổng hợp",
-        publisher: "Google LLC",
-        type: "Entertainment",
-        version: "v20.15.1",
-        date: "02/12/2025",
-        size: "114 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YouTube.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa",
-        description_en: "Injected with YTUHD, YTVideoOverlay, YouPIP, YTLite Plus, YouQuality, ReturnYouTubeDislike",
-        description_vi: "Bao gồm: YTUHD, YTVideoOverlay, YouPIP, YTLite Plus, YouQuality, ReturnYouTubeDislike"
-    },
-    {
-        name: "MBill - Fake MBBank",
-        publisher: "TipTip",
-        type: "Utilities",
-        version: "v1.0",
-        date: "02/12/2025",
-        size: "772 KB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/MB_Bank.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa",
-        description_en: "Fake MBBank balance notification",
-        description_vi: "Fake thông báo biến động số dư MBBank"
-    },
-    {
-        name: "BHTikTokPlus",
-        publisher: "TikTok Ltd.",
-        type: "Entertainment",
-        version: "v41.3.0",
-        date: "02/12/2025",
-        size: "352 MB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/BHTikTok.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa",
-        description_en: "TikTok with more features, injected with BHTikTokPlus",
-        description_vi: "TikTok nhưng nó nhiều tính năng hơn, inject BHTikTokPlus"
-    },
-    {
-        name: "DLiPA",
-        publisher: "Ahmed Bakfir",
-        type: "Utilities",
-        version: "v1.0.0",
-        date: "02/12/2025",
-        size: "469 KB",
-        iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/DLiPA.png",
-        downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa",
-        description_en: "Downgrade App Store apps",
-        description_vi: "Hạ phiên bản app trên App Store"
-    }
+            {
+                name: "Locket (Gold)",
+                publisher: "Locket Labs, Inc.",
+                type: "Photo & Video",
+                version: "v2.8.0",
+                date: "02/12/2025",
+                size: "135 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/LocketGold.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Locket_v2.8.0_Gold.ipa",
+                description_en: "Injected with Gold - 5s recording only, inject_EXT (fixExtension)",
+                description_vi: "Đã tiêm Gold - chỉ 5 giây, inject_EXT (fixExtension) - v2.8.0"
+            },
+            {
+                name: "Minecraft",
+                publisher: "Mojang Studio",
+                type: "Games",
+                version: "v1.21.124",
+                date: "02/12/2025",
+                size: "590 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Minecraft.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Minecraft_v1.21.124.ipa",
+                description_en: "Minecraft 1.21.124, decrypted, Xbox login supported",
+                description_vi: "Minecraft 1.21.124, decrypted, có Xbox login"
+            },
+            {
+                name: "Alight Motion Premium",
+                publisher: "Bending Spoons Apps ApS",
+                type: "Photo & Video",
+                version: "v6.2.38",
+                date: "02/12/2025",
+                size: "115 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/AlightMotion.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Alight.Motion_Premium_v6.2.38.ipa",
+                description_en: "Alight Motion Premium, no account login, iPA from iOS CodeVN",
+                description_vi: "Alight Motion Premium, không log acc, nguồn Lê Tí (iOS CodeVN)"
+            },
+            {
+                name: "Camera+ (App Store)",
+                publisher: "Latenite",
+                type: "Photo & Video",
+                version: "v24.5.3",
+                date: "02/12/2025",
+                size: "202 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/cameraplus.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Camera+_v24.5.3.ipa",
+                description_en: "Camera+ - from App Store",
+                description_vi: "Camera+ bản App Store, v24.5.3"
+            },
+            {
+                name: "Geometry Dash",
+                publisher: "RobTop",
+                type: "Games",
+                version: "v2.207",
+                date: "02/12/2025",
+                size: "148 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/gd.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Geometry_Dash_v2.207.ipa",
+                description_en: "Geometry Dash 2.2 - from App Store, no crack/mod included",
+                description_vi: "Geometry Dash 2.2 bản trắng App Store, không crack/mod"
+            },
+            {
+                name: "ibisPaint (No Ads)",
+                publisher: "ibis inc.",
+                type: "Photo & Video",
+                version: "v13.1.9",
+                date: "02/12/2025",
+                size: "129 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ibisPaint.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ibisPaint_NoAds_v13.1.9.ipa",
+                description_en: "ibisPaint Paid version (from App Store)",
+                description_vi: "ibisPaint bản đen 250k (App Store)"
+            },
+            {
+                name: "ProCam - ProCamera",
+                publisher: "Tinkerworks",
+                type: "Photo & Video",
+                version: "v14.8.5",
+                date: "02/12/2025",
+                size: "65.7 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/procam.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ProCam_v14.8.5.ipa",
+                description_en: "ProCam - ProCamera ($9.99 on App Store)",
+                description_vi: "ProCam - ProCamera bản trắng $9,99 (App Store)"
+            },
+            {
+                name: "RoPhim VIP (RoX)",
+                publisher: "RoTeam",
+                type: "Entertainment",
+                version: "v1.0.5",
+                date: "02/12/2025",
+                size: "36.7 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/rox.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/RoPhim_VIP_v1.0.5.ipa",
+                description_en: "RoX iPA, from Huy Nguyen (34306)",
+                description_vi: "RoX iPA, cre Huy Nguyen (34306)"
+            },
+            {
+                name: "Shadowrocket",
+                publisher: "Liguangming",
+                type: "Utilities",
+                version: "v2.2.72",
+                date: "02/12/2025",
+                size: "42.2 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/shadow.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Shadowrocket_v2.2.72.ipa",
+                description_en: "Shadowrocket - from App Store",
+                description_vi: "Shadowrocket bản App Store, v2.2.72"
+            },
+            {
+                name: "Stable - Video Stabilizer",
+                publisher: "Le Giang Nam",
+                type: "Apps",
+                version: "v1.1.6",
+                date: "02/12/2025",
+                size: "13.9 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/stable.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/VideoStabilizer_v1.1.6.ipa",
+                description_en: "Stable - Video Stabilizer ($4.99 from App Store)",
+                description_vi: "Stable - Video Stabilizer bản $4,99 (App Store)"
+            },
+            {
+                name: "Zsign",
+                publisher: "Zsign.app",
+                type: "Utilities",
+                version: "v1.5.8",
+                date: "02/12/2025",
+                size: "15.5 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ZSign.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Zsign_v1.5.8.ipa",
+                description_en: "ZSign for iOS 15 and later",
+                description_vi: "ZSign cho iOS 15 trở lên"
+            },
+            {
+                name: "ESign VN",
+                publisher: "Khoindvn",
+                type: "Utilities",
+                version: "v1.5.8",
+                date: "02/12/2025",
+                size: "43.8 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/ESign.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/ESign.ipa",
+                description_en: "ESign iPA - Khoindvn",
+                description_vi: "ESign iPA - Khoindvm"
+            },
+            {
+                name: "Feather",
+                publisher: "SAMSAM - khcrysalis",
+                type: "Utilities",
+                version: "v1.3.1",
+                date: "02/12/2025",
+                size: "12.1 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Feather.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Feather_v1.3.1.ipa",
+                description_en: "Feather for iOS 15 and later",
+                description_vi: "Feather cho iOS 15 trở lên"
+            },
+            {
+                name: "MonPlayer Premium",
+                publisher: "iOS CodeVN",
+                type: "Entertainment",
+                version: "v1.3.9",
+                date: "02/12/2025",
+                size: "36.4 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/MonPlayer.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MonPlayer++_1.3.9_14.0_LeTi.ipa",
+                description_en: "MonPlayer No Ads, iPA from iOS CodeVN",
+                description_vi: "MonPlayer Không quảng cáo, nguồn Lê Tí - iOS CodeVN"
+            },
+            {
+                name: "Chrome iOS 15",
+                publisher: "Google LLC",
+                type: "Apps",
+                version: "v125.6422.145",
+                date: "02/12/2025",
+                size: "78.2 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Chrome.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/Chrome_125.6422.145_iOS-15.ipa",
+                description_en: "Chrome for iOS 15 and later",
+                description_vi: "Chrome cho iOS 15 trở lên"
+            },
+            {
+                name: "EeveeSpotify",
+                publisher: "whoeevee",
+                type: "Music",
+                version: "v9.0.68",
+                date: "02/12/2025",
+                size: "80.3 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/Spotify.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/EeveeSpotify_9.0.68.ipa",
+                description_en: "Spotify Premium, supports Google/Facebook login, no ads, no offline download",
+                description_vi: "Spotify Premium, log Google/Facebook"
+            },
+            {
+                name: "YTMusicUltimate",
+                publisher: "Google LLC",
+                type: "Music",
+                version: "v7.21.1",
+                date: "02/12/2025",
+                size: "83.5 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YTMusic.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YTMusicUltimate_v7.21.1.ipa",
+                description_en: "Injected with YTMusicUltimate",
+                description_vi: "Đã tiêm YTMusicUltimate"
+            },
+            {
+                name: "YouTube tổng hợp",
+                publisher: "Google LLC",
+                type: "Entertainment",
+                version: "v20.15.1",
+                date: "02/12/2025",
+                size: "114 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/YouTube.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/YouTube_v20.15.1_Premium.ipa",
+                description_en: "Injected with YTUHD, YTVideoOverlay, YouPIP, YTLite Plus, YouQuality, ReturnYouTubeDislike",
+                description_vi: "Bao gồm: YTUHD, YTVideoOverlay, YouPIP, YTLite Plus, YouQuality, ReturnYouTubeDislike"
+            },
+            {
+                name: "MBill - Fake MBBank",
+                publisher: "TipTip",
+                type: "Utilities",
+                version: "v1.0",
+                date: "02/12/2025",
+                size: "772 KB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/MB_Bank.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/MBBank_1.0_FakeNotification.ipa",
+                description_en: "Fake MBBank balance notification",
+                description_vi: "Fake thông báo biến động số dư MBBank"
+            },
+            {
+                name: "BHTikTokPlus",
+                publisher: "TikTok Ltd.",
+                type: "Entertainment",
+                version: "v41.3.0",
+                date: "02/12/2025",
+                size: "352 MB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/BHTikTok.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/TikTok_BHTikTokPlus_v41.3.0.ipa",
+                description_en: "TikTok with more features, injected with BHTikTokPlus",
+                description_vi: "TikTok nhưng nó nhiều tính năng hơn, inject BHTikTokPlus"
+            },
+            {
+                name: "DLiPA",
+                publisher: "Ahmed Bakfir",
+                type: "Utilities",
+                version: "v1.0.0",
+                date: "02/12/2025",
+                size: "469 KB",
+                iconUrl: "https://raw.githubusercontent.com/Astear17/iDevicePatcher/main/DLiPA.png",
+                downloadLink: "https://github.com/Astear17/iDevicePatcher/releases/download/2.0/DLiPA_v1.0.0.ipa",
+                description_en: "Downgrade App Store apps",
+                description_vi: "Hạ phiên bản app trên App Store"
+            }
         ];
+
         const i18n = {
             vi: {
                 back: "Trang chủ",
@@ -347,29 +530,36 @@
                 uploaded: "Uploaded"
             }
         };
+
         let currentLang = 'vi'; 
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
+
+        // Theme Initialization
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlElement.classList.add('dark');
         } else {
             htmlElement.classList.remove('dark');
         }
+
+        // Theme Toggle
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
+            localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            renderApps(); // Re-render if necessary for dynamic assets
         });
+
+        // Language Handling (Effect from File 10)
         function setLanguage(lang) {
             currentLang = lang;
             document.getElementById('nav-back').innerText = i18n[lang].back;
+            
             const btnVi = document.getElementById('btn-vi');
             const btnEn = document.getElementById('btn-en');
-            const activeClass = ['bg-white', 'text-black', 'shadow-sm', 'dark:bg-gray-700', 'dark:text-white'];
-            const inactiveClass = ['text-gray-500', 'hover:text-gray-800', 'dark:text-gray-400', 'dark:hover:text-gray-200'];
+            
+            const activeClass = ['bg-white/80', 'text-[#007AFF]', 'shadow-[0_4px_12px_rgba(0,0,0,0.1)]', 'dark:bg-white/10', 'dark:text-white', 'backdrop-blur-md'];
+            const inactiveClass = ['text-gray-500', 'hover:text-gray-800', 'hover:bg-black/5', 'dark:text-gray-400', 'dark:hover:text-gray-200', 'dark:hover:bg-white/5'];
+
             if (lang === 'vi') {
                 btnVi.classList.add(...activeClass);
                 btnVi.classList.remove(...inactiveClass);
@@ -383,62 +573,81 @@
             }
             renderApps();
         }
+
         const container = document.getElementById('app-container');
+        
         const handleImageError = (img) => {
             const isDark = htmlElement.classList.contains('dark');
             const bg = isDark ? '333333' : 'e2e8f0';
             const fg = isDark ? '888888' : '94a3b8';
             img.src = `https://placehold.co/150x150/${bg}/${fg}?text=App`;
         };
+
+        // Render Cards (File 10 Structure + File 8 Button + File 5 Icon)
         function renderApps() {
             container.innerHTML = ''; 
             const t = i18n[currentLang]; 
-            apps.forEach(app => {
+            
+            apps.forEach((app, index) => {
                 const desc = currentLang === 'vi' ? (app.description_vi || app.description_en) : app.description_en;
+                
                 const card = document.createElement('div');
-                card.className = "theme-transition bg-white dark:bg-[#1c1c1e] rounded-2xl p-4 mb-4 shadow-sm border border-gray-100 dark:border-gray-800";
+                card.className = "glass-card p-6 mb-8 transform transition-all duration-300";
+                // Animation from File 10
+                card.style.animation = `fadeInUp 0.6s ease forwards ${index * 0.05}s`;
+                card.style.opacity = '0'; 
+                
                 card.innerHTML = `
-                    <div class="flex flex-row items-start gap-4">
-                        <div class="flex-shrink-0">
+                    <div class="flex flex-col sm:flex-row items-start gap-6 relative z-10">
+                        <div class="flex-shrink-0 mx-auto sm:mx-0">
                             <img src="${app.iconUrl}" 
                                  alt="${app.name}" 
                                  onerror="handleImageError(this)"
-                                 class="app-icon w-20 h-20 sm:w-24 sm:h-24 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-700 border dark:border-gray-700">
+                                 class="app-icon w-[5.5rem] h-[5.5rem] sm:w-28 sm:h-28 object-cover bg-gray-50/10 border border-white/20">
                         </div>
-                        <div class="flex-grow flex flex-col sm:flex-row sm:justify-between sm:items-center w-full min-w-0">
-                            <div class="flex flex-col pr-2">
-                                <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white leading-tight mb-1 truncate">
-                                    ${app.name}
-                                </h2>
-                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">
-                                    ${app.type} &ndash; ${app.publisher}
-                                </p>
-                                <div class="text-[11px] sm:text-xs text-gray-400 dark:text-gray-500 font-normal flex flex-wrap gap-x-2 gap-y-1 items-center">
-                                    <span class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-gray-500 dark:text-gray-400 font-medium">${app.version}</span>
-                                    <span>&bull;</span>
-                                    <span>${app.date}</span>
-                                    <span>&bull;</span>
-                                    <span>${app.size}</span>
+                        
+                        <div class="flex-grow flex flex-col w-full min-w-0 pt-1">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                                <div class="flex-grow min-w-0 text-center sm:text-left">
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight mb-2 tracking-tight">
+                                        ${app.name}
+                                    </h2>
+                                    <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 tracking-wide">
+                                        ${app.publisher}
+                                    </p>
+                                    
+                                    <div class="text-xs text-gray-400 dark:text-gray-500 flex flex-wrap justify-center sm:justify-start gap-x-3 gap-y-2 items-center">
+                                        <span class="bg-black/5 dark:bg-white/10 px-2 py-1 rounded-md text-gray-600 dark:text-gray-300 backdrop-blur-sm">${app.version}</span>
+                                        <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                        <span>${app.date}</span>
+                                        <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                                        <span>${app.size}</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-shrink-0 w-full sm:w-auto mt-2 sm:mt-0 text-center">
+                                    <a href="${app.downloadLink}" 
+                                       class="download-btn w-full sm:w-auto uppercase">
+                                        ${t.get}
+                                    </a>
                                 </div>
                             </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-4 flex-shrink-0">
-                                <a href="${app.downloadLink}" 
-                                   class="download-btn block w-full sm:w-auto text-center text-white font-bold text-sm px-6 py-2 rounded-full shadow-sm hover:shadow-md">
-                                    ${t.get}
-                                </a>
+                            
+                            <div class="mt-5 text-sm text-gray-600 dark:text-gray-300 leading-relaxed font-normal opacity-90 text-center sm:text-left">
+                                ${desc}
                             </div>
                         </div>
-                    </div>
-                    <hr class="my-3 border-gray-100 dark:border-gray-700 theme-transition">
-                    <div class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed px-1">
-                        ${desc}
                     </div>
                 `;
                 container.appendChild(card);
             });
+            
             lucide.createIcons();
         }
+
+        // Init
         setLanguage('vi'); 
+        
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             if (!localStorage.theme) {
                 if (e.matches) htmlElement.classList.add('dark');
