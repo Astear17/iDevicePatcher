@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
   <script>
    tailwind.config = {
     darkMode: "class",
@@ -121,52 +122,49 @@
     background: rgba(30, 30, 35, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
    }
-   .glass-card:hover {
-    transform: translateY(-5px);
-   }
    .notice-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #333;
-    font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 18px;
-   }
-   html.dark .notice-btn {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.1);
-   }
-   .notice-btn:hover {
-    background: rgba(0, 122, 255, 0.1);
-    border-color: rgba(0, 122, 255, 0.3);
-    color: #007aff;
-   }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #333;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 18px;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  isolation: isolate; /* <-- add this */
+}
+
+
+html.dark .notice-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.notice-btn:hover { background: rgba(0, 122, 255, 0.2); border-color: rgba(0, 122, 255, 0.4); color: #007aff; transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3); }
+
    .download-btn {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #007aff;
-    font-weight: 700;
-    padding: 10px 24px;
-    border-radius: 50px;
-    display: inline-block;
-    text-align: center;
-   }
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #007aff;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 50px;
+  display: inline-block;
+  text-align: center;
+  isolation: isolate; /* <-- add this */
+}
    html.dark .download-btn {
     color: white;
    }
-   .download-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 122, 255, 0.3);
-   }
+  .download-btn:hover { background: rgba(255, 255, 255, 0.2); box-shadow: 0 0 15px rgba(0, 122, 255, 0.3); }
    /* Dropdown */
    .menu-dropdown {
     background: rgba(255, 255, 255, 0.9);
