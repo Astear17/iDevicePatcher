@@ -319,17 +319,17 @@ opacity: 0 !important;
 <p id="notice-desc" class="text-sm text-gray-600 dark:text-gray-300 fade-text">Loading...</p>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-<a href="#" class="notice-btn group" id="btn-telegram">
+<a href="https://khoindvn.io.vn/" class="notice-btn group" id="btn-khoindvn">
   <i data-lucide="send" class="w-5 h-5 opacity-70 group-hover:opacity-100"></i>
-  <span id="notice-telegram" class="fade-text">Telegram</span>
+  <span id="notice-khoindvn" class="fade-text">khoindvn</span>
 </a>
-<a href="#" class="notice-btn group" id="btn-twitter">
-  <i data-lucide="twitter" class="w-5 h-5 opacity-70 group-hover:opacity-100"></i>
-  <span id="notice-twitter" class="fade-text">Twitter</span>
+<a href="https://applejr.net/" class="notice-btn group" id="btn-applejr">
+  <i data-lucide="applejr" class="w-5 h-5 opacity-70 group-hover:opacity-100"></i>
+  <span id="notice-applejr" class="fade-text">applejr</span>
 </a>
-<a href="#" class="notice-btn group" id="btn-website">
+<a href="https://docs.sidestore.io/docs/installation/prerequisites" class="notice-btn group" id="btn-sidestore">
   <i data-lucide="globe" class="w-5 h-5 opacity-70 group-hover:opacity-100"></i>
-  <span id="notice-website" class="fade-text">Website</span>
+  <span id="notice-sidestore" class="fade-text">sidestore</span>
 </a>
   </div>
 </div>
@@ -579,9 +579,9 @@ vi: {
   notice: {
 title: "Không tìm được cách cài đặt/sideload iPA?",
 desc: "Duới đây là một số giải pháp cài đặt iPA hiệu quả nhất cho iPhone/iPad của bạn!",
-telegram: "Khơindvn - Ký chứng chỉ",
-twitter: "AppleJr - Ký chứng chỉ",
-website: "SideStore - Cần dùng PC"
+khoindvn: "Khơindvn - Ký chứng chỉ",
+applejr: "AppleJr - Ký chứng chỉ",
+sidestore: "SideStore - Cần dùng PC"
   }
 },
 en: {
@@ -590,9 +590,9 @@ en: {
   notice: {
 title: "Having trouble searching for sideloading method?",
 desc: "Here are some recommended methods to sideload iPA to your iDevice!",
-telegram: "Khơindvn - Certificates",
-twitter: "AppleJr - Certificates",
-website: "SideStore - PC required"
+khoindvn: "Khơindvn - Certificates",
+applejr: "AppleJr - Certificates",
+sidestore: "SideStore - PC required"
   }
 }
   };
@@ -631,7 +631,7 @@ localStorage.theme = htmlElement.classList.contains("dark") ? "dark" : "light";
 renderApps(false);
   });
   function setLanguage(lang) {
-const textIds = ["nav-back", "notice-title", "notice-desc", "notice-telegram", "notice-twitter", "notice-website"];
+const textIds = ["nav-back", "notice-title", "notice-desc", "notice-khoindvn", "notice-applejr", "notice-sidestore"];
 textIds.forEach(id => {
   const el = document.getElementById(id);
   if (el) el.classList.add('opacity-0-imp');
@@ -653,9 +653,9 @@ const t = i18n[lang];
 document.getElementById("nav-back").innerText = t.back;
 document.getElementById("notice-title").innerText = t.notice.title;
 document.getElementById("notice-desc").innerText = t.notice.desc;
-document.getElementById("notice-telegram").innerText = t.notice.telegram;
-document.getElementById("notice-twitter").innerText = t.notice.twitter;
-document.getElementById("notice-website").innerText = t.notice.website;
+document.getElementById("notice-khoindvn").innerText = t.notice.khoindvn;
+document.getElementById("notice-applejr").innerText = t.notice.applejr;
+document.getElementById("notice-sidestore").innerText = t.notice.sidestore;
   }
 
   function updateLangButtons(lang) {
