@@ -520,14 +520,14 @@
                     {
                         "downloadURL": "https://github.com/AhmedBafkir/DLiPA/releases/download/v1.2/DLiPA_v1.2.ipa",
                         "size": 469000,
-                        "version": "1.0.0",
+                        "version": "1.2",
                         "buildVersion": "1",
                         "date": "2025-09-03T12:00:00Z",
                         "localizedDescription": "Hạ phiên bản app trên App Store",
                         "minOSVersion": "14.1"
                     }
                 ],
-                "version": "1.0.0",
+                "version": "1.2",
                 "versionDate": "2025-09-03T12:00:00Z",
                 "size": 469000,
                 "downloadURL": "https://github.com/AhmedBafkir/DLiPA/releases/download/v1.2/DLiPA_v1.2.ipa"
