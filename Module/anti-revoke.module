@@ -1,0 +1,26 @@
+#!url=https://raw.githubusercontent.com/Astear17/iDevicePatcher/refs/heads/main/Module/anti-revoke.module
+#!name=Anti Revoke - Astear17
+#!desc=Anti Revoke cho chứng chỉ Khoindvn
+# BẬT DNS ANTI REVOKE KHƠINDVN KHI DÙNG MODULE NÀY
+
+[General]
+bypass-system-dns = false
+always-resolve = true
+
+[Proxy]
+
+[Rule]
+DOMAIN,appattest.apple.com,REJECT
+DOMAIN,certs.apple.com,REJECT
+DOMAIN,crl.apple.com,REJECT
+DOMAIN,ocsp.apple.com,REJECT
+DOMAIN,ocsp2.apple.com,REJECT
+DOMAIN,valid.apple.com,REJECT
+DOMAIN,vpp.itunes.apple.com,REJỆCT
+
+DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,itunes.apple.com,DIRECT
+DOMAIN-SUFFIX,apps.apple.com,DIRECT
+
+FINAL,DIRECT
